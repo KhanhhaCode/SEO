@@ -4,256 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Mẫu Thẻ Meta SEO Cơ Bản -->
-    <title>Game Tuổi Thơ Online - Chơi Game Rắn Ăn Mồi & Bắn Xe Tăng Miễn Phí</title>
-    <meta name="description" content="Chơi lại các tựa game tuổi thơ kinh điển như Rắn ăn mồi (Snake), Bắn xe tăng (Battle City) ngay trên trình duyệt. Game nhẹ, mượt mà, hoàn toàn miễn phí.">
-    <meta name="keywords" content="game tuoi tho, ran an moi, ban xe tang, game retro, game arcade, choi game online">
+    <!-- Meta SEO On-Page -->
+    <title>Cổng Thông Tin Học Tập & Bài Giảng SEO - Thầy Khánh</title>
+    <meta name="description" content="Trung tâm tài liệu học tập, slide bài giảng môn SEO, Marketing Online và các công cụ thực hành dành cho sinh viên.">
+    <meta name="keywords" content="bai giang seo, hoc seo online, thai khanh seo, tai lieu seo, thuc hanh seo">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Tags (SEO Social) -->
-    <meta property="og:title" content="Game Tuổi Thơ Online - Rắn Ăn Mồi & Bắn Xe Tăng">
-    <meta property="og:description" content="Ôn lại kỷ niệm tuổi thơ với các tựa game máy thùng, game 4 nút kinh điển.">
-    <meta property="og:type" content="website">
 
     <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #e94560;
+            --light: #f4f7f6;
+            --dark: #222;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a2e;
-            color: #ffffff;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 15px 50px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        header { text-align: center; margin-bottom: 20px; }
-        h1 { color: #e94560; margin-bottom: 5px; }
-        p.subtitle { color: #0f3460; color: #a2a2a2; font-size: 14px; }
-        
-        .game-selector {
-            margin-bottom: 20px;
-        }
-        .btn-game {
-            background-color: #0f3460;
-            color: white;
-            border: 2px solid #e94560;
-            padding: 10px 20px;
-            margin: 0 5px;
+
+        nav .logo {
+            color: #fff;
+            font-size: 22px;
             font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
             transition: 0.3s;
         }
-        .btn-game:hover, .btn-game.active {
-            background-color: #e94560;
-        }
 
-        #game-container {
-            background-color: #16213e;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-
-        canvas {
-            background-color: #000;
-            border: 3px solid #e94560;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .controls-hint {
-            margin-top: 15px;
-            font-size: 14px;
+        nav a:hover, nav a.active {
             color: #f1c40f;
         }
 
-        /* Khối Bài Viết Hỗ Trợ SEO Content */
-        article.seo-content {
-            max-width: 600px;
-            margin-top: 40px;
-            background-color: #16213e;
-            padding: 20px;
-            border-radius: 8px;
-            line-height: 1.6;
+        .btn-game-nav {
+            background-color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold !important;
         }
-        article h2 { color: #4eacc5; }
+
+        /* Container Content */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 6px solid var(--primary);
+        }
+
+        .hero h1 { color: var(--primary); margin-top: 0; }
+
+        /* Grid Bài giảng */
+        .section-title {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 { color: var(--secondary); margin-top: 0; }
+        .card a.btn-download {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Game Tuổi Thơ Online</h1>
-        <p class="subtitle">Tổng hợp các trò chơi Arcade & Game 4 nút huyền thoại</p>
-    </header>
+    <!-- Thanh Điều Hướng (Menu) -->
+    <nav>
+        <a href="index.html" class="logo">🎓 Lớp Học SEO Thầy Khánh</a>
+        <ul>
+            <li><a href="index.html" class="active">Trang Chủ</a></li>
+            <li><a href="#bai-giang">Bài Giảng</a></li>
+            <li><a href="#thuc-hanh">Thực Hành</a></li>
+            <li><a href="game.html" class="btn-game-nav">🎮 Góc Giải Trí</a></li>
+        </ul>
+    </nav>
 
-    <div class="game-selector">
-        <button class="btn-game active" onclick="switchGame('snake')">🐍 Rắn Ăn Mồi</button>
-        <button class="btn-game" onclick="switchGame('tank')">💥 Bắn Xe Tăng</button>
-    </div>
+    <div class="container">
+        <!-- Khối Giới Thiệu (Hero Section) -->
+        <div class="hero">
+            <h1>Chào Mừng Sinh Viên Đến Với Môn Học SEO & Digital Marketing</h1>
+            <p>Trang web này là nơi tổng hợp toàn bộ bài giảng, tài nguyên thực hành và thông báo quan trọng. Hãy theo dõi thường xuyên để cập nhật kiến thức mới nhất về Tối ưu hóa Công cụ Tìm kiếm (SEO)!</p>
+        </div>
 
-    <div id="game-container">
-        <h2 id="game-title">Game Rắn Ăn Mồi</h2>
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <div class="controls-hint" id="game-controls">
-            Điều khiển: Dùng 4 phím mũi tên [⬆️ ⬇️ ⬅️ ➡️] để di chuyển.
+        <!-- Khối Bài Giảng SEO -->
+        <h2 class="section-title" id="bai-giang">📚 Tài Liệu & Slide Bài Giảng</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Chương 1: Tổng Quan Về SEO</h3>
+                <p>Khái niệm cơ bản về Search Engine, cách Googlebot crawl dữ liệu và mô hình hoạt động của công cụ tìm kiếm.</p>
+                <a href="#" class="btn-download">📥 Tải Slide (PDF)</a>
+            </div>
+            <div class="card">
+                <h3>Chương 2: Nghiên Cứu Từ Khóa</h3>
+                <p>Phương pháp xác định Search Intent, sử dụng Google Keyword Planner và xây dựng Ma trận Từ khóa (Keyword Map).</p>
+                <a href="#" class="btn-download">📥 Tải Slide (PDF)</a>
+            </div>
+            <div class="card">
+                <h3>Chương 3: Kỹ Thuật SEO On-Page</h3>
+                <p>Tối ưu hóa thẻ Title, Meta Description, Heading (H1-H3), cấu trúc URL và tối ưu hình ảnh chuẩn SEO.</p>
+                <a href="#" class="btn-download">📥 Tải Slide (PDF)</a>
+            </div>
+        </div>
+
+        <!-- Khối Bài Tập Thực Hành -->
+        <h2 class="section-title" id="thuc-hanh">🛠️ Bài Tập & Công Cụ Thực Hành</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Bài Tập 1: Tối Ưu Thẻ Meta</h3>
+                <p>Thực hành viết Title & Description cho trang web cá nhân trên GitHub Pages để đạt tỷ lệ CTR cao nhất.</p>
+            </div>
+            <div class="card">
+                <h3>Bài Tập 2: Khai Báo Search Console</h3>
+                <p>Hướng dẫn kết nối trang web vừa tạo với Google Search Console và nộp Sitemap XML.</p>
+            </div>
         </div>
     </div>
 
-    <!-- SEO Content: Thẻ H2, H3 giúp Google hiểu nội dung trang -->
-    <article class="seo-content">
-        <h2>Trải Nghiệm Ký Ức Tuổi Thơ Với Game Retro</h2>
-        <p>Những tựa game như <strong>Rắn ăn mồi (Snake)</strong> hay <strong>Bắn xe tăng (Tank Battalion)</strong> từng làm mưa làm gió trên các dòng máy Nokia huyền thoại và máy điện tử đĩa 4 nút. Giờ đây bạn có thể chơi trực tiếp ngay trên trang web này mà không cần cài đặt.</p>
-        
-        <h3>1. Game Rắn Ăn Mồi (Snake Classic)</h3>
-        <p>Nhiệm vụ của bạn là điều khiển chú rắn ăn các điểm mồi xuất hiện trên màn hình để kéo dài thân mình. Hãy cẩn thận đừng để rắn tự cắn vào đuôi hoặc đâm vào tường!</p>
+    <footer>
+        <p>© 2026 Cổng Thông Tin Giảng Dạy SEO - Thầy Khánh. All rights reserved.</p>
+    </footer>
 
-        <h3>2. Game Bắn Xe Tăng (Mini Tank)</h3>
-        <p>Sử dụng phím mũi tên để di chuyển xe tăng và phím <strong>Spacebar (Dấu cách)</strong> để bắn hạ các xe tăng địch. Tiêu diệt toàn bộ mục tiêu để giành chiến thắng!</p>
-    </article>
-
-    <script>
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
-        let currentGame = 'snake';
-        let gameLoop;
-
-        function switchGame(game) {
-            currentGame = game;
-            document.querySelectorAll('.btn-game').forEach(b => b.classList.remove('active'));
-            clearInterval(gameLoop);
-
-            if (game === 'snake') {
-                event.target.classList.add('active');
-                document.getElementById('game-title').innerText = "Game Rắn Ăn Mồi";
-                document.getElementById('game-controls').innerText = "Điều khiển: Dùng các phím mũi tên [⬆️ ⬇️ ⬅️ ➡️]";
-                initSnake();
-            } else if (game === 'tank') {
-                event.target.classList.add('active');
-                document.getElementById('game-title').innerText = "Game Bắn Xe Tăng";
-                document.getElementById('game-controls').innerText = "Điều khiển: Mũi tên để di chuyển | [Spacebar] để BẮN";
-                initTank();
-            }
-        }
-
-        /* --- LOGIC GAME 1: RẮN ĂN MỒI --- */
-        let snake, food, dx, dy, score;
-        function initSnake() {
-            snake = [{x: 200, y: 200}, {x: 190, y: 200}, {x: 180, y: 200}];
-            food = {x: 100, y: 100};
-            dx = 10; dy = 0;
-            document.onkeydown = changeDirectionSnake;
-            gameLoop = setInterval(drawSnakeGame, 100);
-        }
-
-        function drawSnakeGame() {
-            ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Vẽ mồi
-            ctx.fillStyle = "#e94560";
-            ctx.fillRect(food.x, food.y, 10, 10);
-
-            // Di chuyển Rắn
-            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-            snake.unshift(head);
-
-            // Rắn ăn mồi
-            if (head.x === food.x && head.y === food.y) {
-                food = {
-                    x: Math.floor(Math.random() * 39) * 10,
-                    y: Math.floor(Math.random() * 39) * 10
-                };
-            } else {
-                snake.pop();
-            }
-
-            // Va chạm tường hoặc thân
-            if (head.x < 0 || head.x >= 400 || head.y < 0 || head.y >= 400 || checkSelfCollision(head)) {
-                alert("Game Over! Điểm của bạn: " + (snake.length - 3));
-                initSnake();
-            }
-
-            // Vẽ Rắn
-            ctx.fillStyle = "#4eacc5";
-            snake.forEach(part => ctx.fillRect(part.x, part.y, 10, 10));
-        }
-
-        function checkSelfCollision(head) {
-            for (let i = 1; i < snake.length; i++) {
-                if (head.x === snake[i].x && head.y === snake[i].y) return true;
-            }
-            return false;
-        }
-
-        function changeDirectionSnake(e) {
-            if (e.key === "ArrowLeft" && dx === 0) { dx = -10; dy = 0; }
-            if (e.key === "ArrowUp" && dy === 0) { dx = 0; dy = -10; }
-            if (e.key === "ArrowRight" && dx === 0) { dx = 10; dy = 0; }
-            if (e.key === "ArrowDown" && dy === 0) { dx = 0; dy = 10; }
-        }
-
-        /* --- LOGIC GAME 2: BẮN XE TĂNG --- */
-        let player, bullets, enemies;
-        function initTank() {
-            player = {x: 180, y: 360, w: 30, h: 30, dir: 'up'};
-            bullets = [];
-            enemies = [{x: 50, y: 20, w: 30, h: 30}, {x: 200, y: 20, w: 30, h: 30}, {x: 320, y: 20, w: 30, h: 30}];
-            document.onkeydown = controlTank;
-            gameLoop = setInterval(drawTankGame, 30);
-        }
-
-        function controlTank(e) {
-            if (currentGame !== 'tank') return;
-            if (e.key === "ArrowLeft" && player.x > 0) player.x -= 10;
-            if (e.key === "ArrowRight" && player.x < 370) player.x += 10;
-            if (e.key === "ArrowUp" && player.y > 0) player.y -= 10;
-            if (e.key === "ArrowDown" && player.y < 370) player.y += 10;
-            if (e.key === " ") {
-                bullets.push({x: player.x + 12, y: player.y, speed: 7});
-            }
-        }
-
-        function drawTankGame() {
-            ctx.fillStyle = "#111";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Vẽ người chơi (Xe tăng xanh)
-            ctx.fillStyle = "#2ecc71";
-            ctx.fillRect(player.x, player.y, player.w, player.h);
-
-            // Vẽ & xử lý Đạn
-            ctx.fillStyle = "#f1c40f";
-            bullets.forEach((b, index) => {
-                b.y -= b.speed;
-                ctx.fillRect(b.x, b.y, 6, 6);
-                if (b.y < 0) bullets.splice(index, 1);
-
-                // Check va chạm đạn với địch
-                enemies.forEach((en, enIndex) => {
-                    if (b.x > en.x && b.x < en.x + en.w && b.y > en.y && b.y < en.y + en.h) {
-                        enemies.splice(enIndex, 1);
-                        bullets.splice(index, 1);
-                    }
-                });
-            });
-
-            // Vẽ Xe tăng địch (Đỏ)
-            ctx.fillStyle = "#e74c3c";
-            enemies.forEach(en => {
-                ctx.fillRect(en.x, en.y, en.w, en.h);
-            });
-
-            if (enemies.length === 0) {
-                ctx.fillStyle = "#fff";
-                ctx.font = "20px Arial";
-                ctx.fillText("VICTORY! Bạn đã thắng!", 90, 200);
-            }
-        }
-
-        // Khởi chạy game đầu tiên
-        initSnake();
-    </script>
 </body>
 </html>
