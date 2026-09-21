@@ -1,50 +1,901 @@
-<!-- Ultimate Game Stash file-->
-<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="format-detection" content="telephone=no">
-		<meta name="HandheldFriendly" content="true" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="apple-mobile-web-app-title" content="Bubblez">
-		<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui,shrink-to-fit=no" />
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-title" content="Fireboy and Watergirl 2 Light Temple">
-		<title>Fireboy & Watergirl 2 Light Temple</title>
-		<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/assets/styles/main.css'>
-		<script type="text/javascript">
-			var gtag;
-		</script>
-	</head>
-	<body style="margin: 0px; overflow: hidden">
-		<script type="text/javascript">
-			window.requireNode = window.require;
-			window.require = undefined;
-		</script>
-		<script src="https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/bower_components/requirejs/require.js"></script>
-		<div id="root">
-			<div id="container"></div>
-			<div id="hammer"></div>
-			<div id="debug-fps" style="color:#ff0000; position: absolute; top: 0;"></div>
-		</div>
-		<script type="text/javascript">
-			function addScript(src, buster, callback) {
-				var s = document.createElement('script');
-				s.setAttribute('src', src + '?v=' + buster);
-				if (typeof callback === 'function') {
-					s.onload = callback;
-				}
-				document.body.appendChild(s);
-			}
-			var fbrqLA = false,
-				fbrqBD = 0,
-				playBtn = true,
-				fbrqSA = true,
-				libs = [],
-				version = '5';
-			require(["https://cdn.jsdelivr.net/gh/bobydob/godotpack@137b954a7a2d8e0a28efe82a778000c02bcc1481/side/faw2/faw2.min.js?v=" + version]);
-		</script>
-	</body>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu Vui Chơi - Cổng Web Game Trực Tuyến Hàng Đầu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            base: '#0B0F17',
+                            card: '#151C2C',
+                            border: '#2A3447',
+                            hover: '#1E293B'
+                        },
+                        brand: {
+                            orange: '#FF6B00',
+                            yellow: '#FFB800',
+                            purple: '#8B5CF6',
+                            pink: '#EC4899',
+                            blue: '#3B82F6',
+                            green: '#10B981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A3447;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B00;
+        }
+        /* Glassmorphism Effect */
+        .glass-panel {
+            background: rgba(21, 28, 44, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow-orange {
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.35);
+        }
+        .neon-glow-purple {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.35);
+        }
+        .game-card-shadow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .game-card-shadow:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 107, 0, 0.25);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group flex-shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-orange to-brand-yellow flex items-center justify-center text-white font-extrabold text-2xl shadow-lg transform group-hover:rotate-6 transition-transform">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-black text-2xl tracking-wider bg-gradient-to-r from-brand-orange via-yellow-400 to-brand-pink bg-clip-text text-transparent drop-shadow-sm">
+                        KHU VUI CHƠI
+                    </span>
+                    <span class="text-[10px] text-gray-400 tracking-widest uppercase font-semibold -mt-1">Web Game Portal</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-md hidden md:block">
+                <div class="relative">
+                    <input type="text" id="searchInput" oninput="filterGames()" placeholder="Nhập tên game bạn muốn tìm..." 
+                        class="w-full bg-dark-card text-sm text-gray-200 placeholder-gray-400 pl-10 pr-4 py-2.5 rounded-full border border-dark-border focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="flex items-center gap-3">
+                <a href="#tutorial" class="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-gray-300 hover:text-brand-orange px-3 py-2 rounded-lg hover:bg-dark-border/50 transition">
+                    <i class="fa-regular fa-lightbulb text-yellow-400 text-sm"></i>
+                    <span>Hướng dẫn</span>
+                </a>
+                <a href="#recent" class="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-gray-300 hover:text-brand-orange px-3 py-2 rounded-lg hover:bg-dark-border/50 transition">
+                    <i class="fa-regular fa-clock text-blue-400 text-sm"></i>
+                    <span>Mới chơi</span>
+                </a>
+                <button onclick="openAuthModal()" class="flex items-center gap-2 bg-gradient-to-r from-brand-orange to-orange-600 hover:from-orange-600 hover:to-brand-orange text-white text-xs font-bold px-4 py-2.5 rounded-full shadow-md hover:shadow-orange-500/20 transition-all transform active:scale-95">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Đăng nhập</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Search Bar (Visible only on mobile) -->
+        <div class="px-4 pb-3 md:hidden">
+            <div class="relative">
+                <input type="text" oninput="filterGames()" placeholder="Nhập tên game..." 
+                    class="w-full bg-dark-card text-sm text-gray-200 placeholder-gray-400 pl-10 pr-4 py-2 rounded-full border border-dark-border focus:outline-none focus:border-brand-orange">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-400 text-sm"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full">
+
+        <!-- CATEGORIES & TAGS SECTION -->
+        <section class="mb-8">
+            <div class="glass-panel p-3.5 rounded-2xl">
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs font-bold" id="categoryList">
+                    <!-- Dynamic categories styled like GameVui tags -->
+                    <button onclick="selectCategory('all')" class="cat-btn active bg-brand-blue text-white px-3.5 py-2 rounded-xl flex items-center gap-1.5 shrink-0 shadow-md">
+                        <i class="fa-solid fa-border-all"></i> Danh mục
+                    </button>
+                    <button onclick="selectCategory('hot')" class="cat-btn bg-red-600 hover:bg-red-500 text-white px-3.5 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        <i class="fa-solid fa-fire text-yellow-300"></i> Game Hot
+                    </button>
+                    <button onclick="selectCategory('hay')" class="cat-btn bg-amber-500 hover:bg-amber-400 text-white px-3.5 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        <i class="fa-solid fa-star text-white"></i> Game Hay
+                    </button>
+                    <button onclick="selectCategory('moi')" class="cat-btn bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        <i class="fa-solid fa-bolt text-yellow-200"></i> Game Mới
+                    </button>
+                    <button onclick="selectCategory('giai-tri')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        👾 Giải trí
+                    </button>
+                    <button onclick="selectCategory('van-phong')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        📁 Văn phòng
+                    </button>
+                    <button onclick="selectCategory('tri-tue')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        🧠 Trí tuệ
+                    </button>
+                    <button onclick="selectCategory('tre-em')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        👶 Trẻ em
+                    </button>
+                    <button onclick="selectCategory('y8')" class="cat-btn bg-red-800 hover:bg-red-700 text-white px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0 font-extrabold">
+                        Y8 Game
+                    </button>
+                    <button onclick="selectCategory('hanh-dong')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        🥊 Hành động
+                    </button>
+                    <button onclick="selectCategory('phieu-luu')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        🗺️ Phiêu lưu
+                    </button>
+                    <button onclick="selectCategory('2-nguoi')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        👥 2 người
+                    </button>
+                    <button onclick="selectCategory('kinh-dien')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        👑 Kinh điển
+                    </button>
+                    <button onclick="selectCategory('chien-thuat')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        ⚔️ Chiến thuật
+                    </button>
+                    <button onclick="selectCategory('pikachu')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-yellow-400 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        ⚡ Pikachu
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN SECTION: GAME GRID & LEADERBOARD SIDEBAR -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+            <!-- LEFT & CENTER: GAMES AREA (3 COLUMNS ON LARGE) -->
+            <div class="lg:col-span-3 space-y-6">
+                
+                <!-- Section Header -->
+                <div class="flex items-center justify-between border-b border-dark-border pb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2.5 h-7 bg-brand-orange rounded-full"></div>
+                        <h2 id="sectionTitle" class="text-xl font-extrabold text-white tracking-wide uppercase flex items-center gap-2">
+                            <i class="fa-solid fa-fire-flame-curved text-brand-orange"></i> Game Vui Hay & Nổi Bật
+                        </h2>
+                    </div>
+                    <span class="text-xs text-gray-400 bg-dark-card px-3 py-1 rounded-full border border-dark-border">
+                        Cập nhật hàng ngày
+                    </span>
+                </div>
+
+                <!-- GAME GRID - Styled layout mirroring GameVui Layout -->
+                <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5">
+                    <!-- Dynamic Game Cards will be loaded by JavaScript -->
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDEBAR: RANKING / LEADERBOARD (Replacing Ads) -->
+            <div class="lg:col-span-1 space-y-6">
+                
+                <!-- LEADERBOARD CARD -->
+                <div class="glass-panel rounded-2xl p-4 border border-dark-border sticky top-20">
+                    
+                    <!-- Sidebar Header & Tabs -->
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-extrabold text-base text-white flex items-center gap-2">
+                            <i class="fa-solid fa-trophy text-brand-yellow text-lg"></i>
+                            BẢNG XẾP HẠNG
+                        </h3>
+                    </div>
+
+                    <!-- Ranking Category Selector Switcher -->
+                    <div class="flex bg-dark-base p-1 rounded-xl mb-4 border border-dark-border text-xs font-semibold">
+                        <button onclick="switchRankTab('games')" id="tabRankGames" class="flex-1 py-1.5 rounded-lg bg-brand-orange text-white shadow transition-all text-center">
+                            Top Games
+                        </button>
+                        <button onclick="switchRankTab('players')" id="tabRankPlayers" class="flex-1 py-1.5 rounded-lg text-gray-400 hover:text-white transition-all text-center">
+                            Cao Thủ
+                        </button>
+                    </div>
+
+                    <!-- Sub filter for Top Games: Tuần / Tháng / All -->
+                    <div class="flex justify-end gap-2 text-[11px] text-gray-400 mb-3 font-medium">
+                        <span class="cursor-pointer text-brand-orange font-bold">Tuần</span>
+                        <span>•</span>
+                        <span class="cursor-pointer hover:text-white">Tháng</span>
+                        <span>•</span>
+                        <span class="cursor-pointer hover:text-white">Mọi thời đại</span>
+                    </div>
+
+                    <!-- LEADERBOARD LIST CONTAINER -->
+                    <div id="leaderboardList" class="space-y-2.5">
+                        <!-- Rendered via JS -->
+                    </div>
+
+                    <!-- VIP Player Banner / Call to Action -->
+                    <div class="mt-5 p-3.5 rounded-xl bg-gradient-to-r from-purple-900/40 to-pink-900/40 border border-purple-500/30 text-center">
+                        <p class="text-xs text-purple-200 font-medium mb-2">Đăng nhập để lưu điểm số và leo Top BXH!</p>
+                        <button onclick="openAuthModal()" class="w-full py-2 bg-gradient-to-r from-brand-purple to-pink-600 hover:opacity-90 text-white text-xs font-bold rounded-lg transition shadow-md">
+                            Tham Gia Ngay
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 border-t border-dark-border bg-dark-card/60 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-orange flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <span class="font-extrabold text-lg text-white">KHU VUI CHƠI</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Cổng web game portal giải trí trực tuyến hàng đầu. Chơi miễn phí hàng nghìn tựa game HTML5 hấp dẫn không cần cài đặt.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3 uppercase tracking-wider">Thể loại Hot</h4>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-brand-orange transition">Game Người Thời Tiền Sử</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Game Thời Trang Công Chúa</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Game Pop It Fidget 3D</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Game Bắn Súng Y8</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3 uppercase tracking-wider">Hỗ Trợ & Điều Khoản</h4>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-brand-orange transition">Hướng Dẫn Chơi Game</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Điều Khoản Sử Dụng</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Bản Quyền Nội Dung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3 uppercase tracking-wider">Kết Nối</h4>
+                    <div class="flex gap-3 text-lg">
+                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-brand-orange hover:border-brand-orange transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-red-500 hover:border-red-500 transition">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-blue-400 hover:border-blue-400 transition">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-dark-border/50 text-center text-xs text-gray-500">
+                © 2026 KhuVuiChoi. All rights reserved. Giao diện thiết kế phong cách Dark Mode chuyên nghiệp.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL CHƠI GAME / GAME PLAYER SIMULATOR -->
+    <div id="gameModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">
+        <div class="bg-dark-card border border-dark-border w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[95vh]">
+            
+            <!-- Modal Header -->
+            <div class="p-3.5 bg-dark-base border-b border-dark-border flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img id="modalGameIcon" src="" class="w-9 h-9 rounded-lg object-cover border border-dark-border" alt="Icon">
+                    <div>
+                        <h3 id="modalGameTitle" class="font-bold text-white text-base leading-tight">Tên Game</h3>
+                        <p id="modalGameCategory" class="text-xs text-brand-orange">Hành động • 12+</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleFullscreen()" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-dark-border transition" title="Toàn màn hình">
+                        <i class="fa-solid fa-expand text-lg"></i>
+                    </button>
+                    <button onclick="closeGameModal()" class="p-2 text-gray-400 hover:text-red-400 rounded-lg hover:bg-dark-border transition" title="Đóng">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game View Area (Simulator) -->
+            <div class="relative bg-black flex-1 min-h-[350px] sm:min-h-[480px] flex items-center justify-center overflow-hidden" id="gameScreenContainer">
+                
+                <!-- Simulated Interactive Game Screen Canvas -->
+                <div id="gameCanvas" class="w-full h-full flex flex-col items-center justify-center bg-slate-950 p-6 text-center relative select-none">
+                    
+                    <!-- Background Visual Element -->
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    
+                    <div id="gameSimState" class="relative z-10 max-w-md">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-brand-orange to-brand-yellow flex items-center justify-center text-white text-4xl shadow-xl animate-bounce">
+                            <i id="gameIconLarge" class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <h2 id="simGameName" class="text-2xl font-extrabold text-white mb-2">Đang tải game...</h2>
+                        <p class="text-xs text-gray-400 mb-6">Sử dụng bàn phím hoặc chuột để điều khiển trong trò chơi</p>
+                        
+                        <!-- Simple Minigame Interactive simulator -->
+                        <div class="bg-dark-card/90 p-4 rounded-xl border border-dark-border mb-4">
+                            <p class="text-xs font-bold text-brand-yellow mb-1">MÔ PHỎNG LỐI CHƠI</p>
+                            <p class="text-sm text-gray-200 font-mono mb-3">Điểm hiện tại: <span id="simScore" class="text-brand-orange text-lg font-bold">0</span></p>
+                            <button onclick="addSimScore()" class="w-full py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-sm rounded-lg shadow-lg active:scale-95 transition">
+                                🎮 BẤM ĐỂ CHƠI & LÊN ĐIỂM
+                            </button>
+                        </div>
+                        <p class="text-[11px] text-gray-500">Bấm phím [ESC] để thoát chế độ toàn màn hình</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="p-3 bg-dark-base border-t border-dark-border flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-4">
+                    <button onclick="likeGame()" class="flex items-center gap-1.5 text-gray-300 hover:text-brand-pink transition font-semibold">
+                        <i class="fa-solid fa-heart text-brand-pink"></i> <span id="likeCount">1,240</span> Thích
+                    </button>
+                    <button onclick="shareGame()" class="flex items-center gap-1.5 text-gray-300 hover:text-brand-blue transition font-semibold">
+                        <i class="fa-solid fa-share-nodes"></i> Chia sẻ
+                    </button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-400">Đánh giá:</span>
+                    <div class="text-brand-yellow text-sm">
+                        ★★★★★ <span class="text-gray-300 font-bold ml-1">4.9/5</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- AUTH MODAL (Đăng Nhập / Đăng Ký) -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-dark-card border border-dark-border w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-brand-orange/20 text-brand-orange rounded-full flex items-center justify-center mx-auto mb-2 text-2xl">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Đăng Nhập Tài Khoản</h3>
+                <p class="text-xs text-gray-400 mt-1">Lưu thành tích và chinh phục Bảng Xếp Hạng</p>
+            </div>
+            <form onsubmit="handleLogin(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-gray-300 mb-1 font-semibold">Tên đăng nhập hoặc Email</label>
+                    <input type="text" required placeholder="Nhập username..." class="w-full bg-dark-base border border-dark-border rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-1 font-semibold">Mật khẩu</label>
+                    <input type="password" required placeholder="••••••••" class="w-full bg-dark-base border border-dark-border rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-brand-orange to-amber-500 text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition">
+                    ĐĂNG NHẬP
+                </button>
+            </form>
+            <div class="mt-4 text-center text-xs text-gray-400">
+                Chưa có tài khoản? <a href="#" class="text-brand-orange font-bold hover:underline">Đăng ký ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DATA & INTERACTION LOGIC -->
+    <script>
+        // MOCK DATA FOR GAMES (Matching layouts from the user reference photo)
+        const gamesData = [
+            {
+                id: 1,
+                title: "Người Thời Tiền Sử",
+                category: "phieu-luu",
+                type: "featured", // Extra large card
+                badge: "HAY",
+                age: "12+",
+                views: "254.3K",
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1563089145-599997674d42?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-skull"
+            },
+            {
+                id: 2,
+                title: "Thời Trang Dạ Hội Công Chúa",
+                category: "con-gai",
+                type: "medium", // Medium portrait card
+                badge: "HOT",
+                age: "",
+                views: "182.1K",
+                rating: "4.8",
+                img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-wand-magic-sparkles"
+            },
+            {
+                id: 3,
+                title: "Pop It Fidget 3D",
+                category: "giai-tri",
+                type: "small",
+                badge: "",
+                age: "12+",
+                views: "95K",
+                rating: "4.7",
+                img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-shapes"
+            },
+            {
+                id: 4,
+                title: "Bắn Súng Săn Tiền Thưởng",
+                category: "hanh-dong",
+                type: "small",
+                badge: "",
+                age: "12+",
+                views: "310K",
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-crosshair"
+            },
+            {
+                id: 5,
+                title: "Cao Bồi Viễn Tây",
+                category: "hanh-dong",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "78K",
+                rating: "4.5",
+                img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-hat-cowboy"
+            },
+            {
+                id: 6,
+                title: "Nàng Tiên Cá Đi Học",
+                category: "con-gai",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "64K",
+                rating: "4.6",
+                img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-fish"
+            },
+            {
+                id: 7,
+                title: "Tàu Ngầm Bắn Nhau 2 Người",
+                category: "2-nguoi",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "142K",
+                rating: "4.8",
+                img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-ship"
+            },
+            {
+                id: 8,
+                title: "Phi Thuyền Không Tĩnh",
+                category: "van-phong",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "88K",
+                rating: "4.4",
+                img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-rocket"
+            },
+            {
+                id: 9,
+                title: "Tiệm Bánh Ngọt Candy",
+                category: "tre-em",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "115K",
+                rating: "4.7",
+                img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-cookie"
+            },
+            {
+                id: 10,
+                title: "Bé Học Vẽ Tranh",
+                category: "tre-em",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "52K",
+                rating: "4.3",
+                img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-palette"
+            },
+            {
+                id: 11,
+                title: "Panda Quyền Thuật",
+                category: "hanh-dong",
+                type: "small",
+                badge: "HAY",
+                age: "12+",
+                views: "420K",
+                rating: "5.0",
+                img: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef9?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-paw"
+            },
+            {
+                id: 12,
+                title: "Robot Chiến Đấu 3D",
+                category: "chien-thuat",
+                type: "small",
+                badge: "",
+                age: "12+",
+                views: "290K",
+                rating: "4.8",
+                img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-robot"
+            },
+            {
+                id: 13,
+                title: "Xếp Gạch Đỉnh Cao",
+                category: "tri-tue",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "198K",
+                rating: "4.6",
+                img: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-cubes"
+            },
+            {
+                id: 14,
+                title: "Chú Bố Cứu Hỏa",
+                category: "giai-tri",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "73K",
+                rating: "4.2",
+                img: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-fire-extinguisher"
+            },
+            {
+                id: 15,
+                title: "Thám Tử Săn Quái",
+                category: "phieu-luu",
+                type: "small",
+                badge: "",
+                age: "18+",
+                views: "340K",
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-mask"
+            },
+            {
+                id: 16,
+                title: "Chú Chó Scooby Chạy Trốn",
+                category: "giai-tri",
+                type: "small",
+                badge: "",
+                age: "",
+                views: "160K",
+                rating: "4.7",
+                img: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=80",
+                icon: "fa-solid fa-dog"
+            }
+        ];
+
+        // LEADERBOARD DATA
+        const topGamesList = [
+            { rank: 1, title: "Panda Quyền Thuật", plays: "420.5K", icon: "fa-solid fa-paw", score: "99,850" },
+            { rank: 2, title: "Thám Tử Săn Quái", plays: "340.1K", icon: "fa-solid fa-mask", score: "88,200" },
+            { rank: 3, title: "Bắn Súng Săn Tiền", plays: "310.8K", icon: "fa-solid fa-crosshair", score: "79,400" },
+            { rank: 4, title: "Robot Chiến Đấu 3D", plays: "290.0K", icon: "fa-solid fa-robot", score: "65,100" },
+            { rank: 5, title: "Người Thời Tiền Sử", plays: "254.3K", icon: "fa-solid fa-skull", score: "54,300" }
+        ];
+
+        const topPlayersList = [
+            { rank: 1, name: "DragonSlayer99", avatar: "🐲", score: "1,250,900 điểm", title: "Thần Thoại" },
+            { rank: 2, name: "ProGamer_VN", avatar: "⚡", score: "980,450 điểm", title: "Cao Thủ" },
+            { rank: 3, name: "MinhPikachu", avatar: "🎮", score: "850,200 điểm", title: "Dày Dặn" },
+            { rank: 4, name: "Princess_Gamer", avatar: "👑", score: "720,100 điểm", title: "Tinh Anh" },
+            { rank: 5, name: "NoobMaster69", avatar: "🔥", score: "640,000 điểm", title: "Tân Binh" }
+        ];
+
+        // STATE VARIABLES
+        let currentRankTab = 'games';
+        let currentSimScore = 0;
+
+        // RENDER GAMES GRID
+        function renderGames(filterCategory = 'all', searchQuery = '') {
+            const grid = document.getElementById('gamesGrid');
+            grid.innerHTML = '';
+
+            let filtered = gamesData.filter(game => {
+                const matchesCat = (filterCategory === 'all' || filterCategory === 'hot' || filterCategory === 'hay' || filterCategory === 'moi') 
+                    ? true 
+                    : game.category === filterCategory;
+                const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-gray-400">
+                        <i class="fa-solid fa-ghost text-4xl mb-3 text-gray-600"></i>
+                        <p>Không tìm thấy game nào phù hợp!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach((game, index) => {
+                const card = document.createElement('div');
+                
+                // Mirror layout adjustments like photo: Featured card spans 2x2 on larger screens
+                if (game.type === 'featured') {
+                    card.className = "col-span-2 row-span-2 relative group rounded-2xl overflow-hidden bg-dark-card border border-dark-border game-card-shadow cursor-pointer flex flex-col min-h-[280px] sm:min-h-[340px]";
+                } else if (game.type === 'medium') {
+                    card.className = "col-span-2 sm:col-span-1 row-span-2 relative group rounded-2xl overflow-hidden bg-dark-card border border-dark-border game-card-shadow cursor-pointer flex flex-col min-h-[280px] sm:min-h-[340px]";
+                } else {
+                    card.className = "col-span-1 relative group rounded-2xl overflow-hidden bg-dark-card border border-dark-border game-card-shadow cursor-pointer flex flex-col aspect-square";
+                }
+
+                card.onclick = () => openGameModal(game);
+
+                card.innerHTML = `
+                    <div class="relative w-full h-full overflow-hidden flex-1">
+                        <img src="${game.img}" alt="${game.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-base via-dark-base/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        
+                        <!-- Badges -->
+                        <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
+                            ${game.badge ? `<span class="bg-brand-yellow text-black text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-lg">${game.badge}</span>` : ''}
+                            ${game.age ? `<span class="bg-emerald-500/90 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-md backdrop-blur">${game.age}</span>` : ''}
+                        </div>
+
+                        <!-- Hover Play Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 bg-black/40 backdrop-blur-none">
+                            <div class="w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center text-xl shadow-xl transform scale-75 group-hover:scale-100 transition-transform">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- Game info overlay -->
+                        <div class="absolute bottom-0 inset-x-0 p-3 z-10">
+                            <h3 class="font-extrabold text-white text-xs sm:text-sm line-clamp-1 group-hover:text-brand-orange transition-colors">${game.title}</h3>
+                            <div class="flex items-center justify-between mt-1 text-[11px] text-gray-300">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-eye text-[10px] text-gray-400"></i> ${game.views}</span>
+                                <span class="flex items-center gap-1 text-brand-yellow"><i class="fa-solid fa-star text-[10px]"></i> ${game.rating}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // RENDER LEADERBOARD SIDEBAR
+        function renderLeaderboard() {
+            const container = document.getElementById('leaderboardList');
+            container.innerHTML = '';
+
+            if (currentRankTab === 'games') {
+                topGamesList.forEach((item) => {
+                    let medalBadge = '';
+                    if (item.rank === 1) medalBadge = '<span class="text-amber-400 font-extrabold"><i class="fa-solid fa-trophy text-amber-400"></i></span>';
+                    else if (item.rank === 2) medalBadge = '<span class="text-slate-300 font-extrabold"><i class="fa-solid fa-medal"></i></span>';
+                    else if (item.rank === 3) medalBadge = '<span class="text-amber-700 font-extrabold"><i class="fa-solid fa-award"></i></span>';
+                    else medalBadge = `<span class="text-gray-500 font-bold text-xs">#${item.rank}</span>`;
+
+                    const row = document.createElement('div');
+                    row.className = "flex items-center justify-between p-2 rounded-xl bg-dark-base/60 hover:bg-dark-border/40 border border-transparent hover:border-dark-border transition cursor-pointer";
+                    row.innerHTML = `
+                        <div class="flex items-center gap-2.5 overflow-hidden">
+                            <div class="w-6 text-center shrink-0 text-sm">${medalBadge}</div>
+                            <div class="w-8 h-8 rounded-lg bg-dark-card flex items-center justify-center text-brand-orange shrink-0 border border-dark-border">
+                                <i class="${item.icon}"></i>
+                            </div>
+                            <div class="truncate">
+                                <h4 class="text-xs font-bold text-gray-200 truncate">${item.title}</h4>
+                                <p class="text-[10px] text-gray-400">${item.plays} lượt chơi</p>
+                            </div>
+                        </div>
+                        <span class="text-[11px] font-extrabold text-brand-orange shrink-0 pl-2">${item.score}</span>
+                    `;
+                    container.appendChild(row);
+                });
+            } else {
+                topPlayersList.forEach((item) => {
+                    let medalBadge = '';
+                    if (item.rank === 1) medalBadge = '🥇';
+                    else if (item.rank === 2) medalBadge = '🥈';
+                    else if (item.rank === 3) medalBadge = '🥉';
+                    else medalBadge = `<span class="text-gray-500 font-bold text-xs">#${item.rank}</span>`;
+
+                    const row = document.createElement('div');
+                    row.className = "flex items-center justify-between p-2 rounded-xl bg-dark-base/60 hover:bg-dark-border/40 border border-transparent hover:border-dark-border transition cursor-pointer";
+                    row.innerHTML = `
+                        <div class="flex items-center gap-2.5 overflow-hidden">
+                            <div class="w-6 text-center shrink-0 text-sm">${medalBadge}</div>
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-purple to-indigo-600 flex items-center justify-center text-white text-sm shrink-0 shadow">
+                                ${item.avatar}
+                            </div>
+                            <div class="truncate">
+                                <h4 class="text-xs font-bold text-gray-200 truncate flex items-center gap-1">
+                                    ${item.name}
+                                </h4>
+                                <p class="text-[10px] text-brand-purple font-semibold">${item.title}</p>
+                            </div>
+                        </div>
+                        <span class="text-[11px] font-bold text-emerald-400 shrink-0 pl-2">${item.score}</span>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+        }
+
+        // SWITCH LEADERBOARD TAB
+        function switchRankTab(type) {
+            currentRankTab = type;
+            const btnGames = document.getElementById('tabRankGames');
+            const btnPlayers = document.getElementById('tabRankPlayers');
+
+            if (type === 'games') {
+                btnGames.className = "flex-1 py-1.5 rounded-lg bg-brand-orange text-white shadow transition-all text-center";
+                btnPlayers.className = "flex-1 py-1.5 rounded-lg text-gray-400 hover:text-white transition-all text-center";
+            } else {
+                btnPlayers.className = "flex-1 py-1.5 rounded-lg bg-brand-purple text-white shadow transition-all text-center";
+                btnGames.className = "flex-1 py-1.5 rounded-lg text-gray-400 hover:text-white transition-all text-center";
+            }
+            renderLeaderboard();
+        }
+
+        // CATEGORY SELECTION
+        function selectCategory(catKey) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-blue', 'text-white');
+                if(!btn.className.includes('bg-dark-card')) {
+                    // Keep original color if styled specially
+                }
+            });
+            
+            // Update Section Title
+            const titleMap = {
+                'all': '<i class="fa-solid fa-fire-flame-curved text-brand-orange"></i> Game Vui Hay & Nổi Bật',
+                'hot': '🔥 Tất Cả Game Hot',
+                'hay': '⭐ Tất Cả Game Hay Nhất',
+                'moi': '⚡ Game Mới Cập Nhật',
+                'phieu-luu': '🗺️ Game Phiêu Lưu',
+                'hanh-dong': '🥊 Game Hành Động Nhập Vai',
+                'con-gai': '👑 Game Bạn Gái & Thời Trang',
+                '2-nguoi': '👥 Game 2 Người Chơi'
+            };
+            document.getElementById('sectionTitle').innerHTML = titleMap[catKey] || '🎮 Game Khu Vui Chơi';
+            renderGames(catKey);
+        }
+
+        // SEARCH FILTER
+        function filterGames() {
+            const query = document.getElementById('searchInput').value;
+            renderGames('all', query);
+        }
+
+        // GAME MODAL SIMULATOR FUNCTIONS
+        function openGameModal(game) {
+            document.getElementById('modalGameTitle').innerText = game.title;
+            document.getElementById('modalGameCategory').innerText = `Thể loại: ${game.category.toUpperCase()} • Rated ${game.age || 'All'}`;
+            document.getElementById('modalGameIcon').src = game.img;
+            document.getElementById('simGameName').innerText = game.title;
+            
+            const iconElem = document.getElementById('gameIconLarge');
+            iconElem.className = game.icon || 'fa-solid fa-gamepad';
+
+            currentSimScore = 0;
+            document.getElementById('simScore').innerText = '0';
+
+            document.getElementById('gameModal').classList.remove('hidden');
+        }
+
+        function closeGameModal() {
+            document.getElementById('gameModal').classList.add('hidden');
+        }
+
+        function addSimScore() {
+            currentSimScore += 10;
+            document.getElementById('simScore').innerText = currentSimScore;
+        }
+
+        function toggleFullscreen() {
+            const elem = document.getElementById('gameScreenContainer');
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => alert(`Error trying to enable fullscreen: ${err.message}`));
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function likeGame() {
+            const countElem = document.getElementById('likeCount');
+            let count = parseInt(countElem.innerText.replace(',', ''));
+            countElem.innerText = (count + 1).toLocaleString();
+        }
+
+        function shareGame() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            alert('Đã sao chép liên kết game vào bộ nhớ tạm!');
+        }
+
+        // AUTH MODAL FUNCTIONS
+        function openAuthModal() {
+            document.getElementById('authModal').classList.remove('hidden');
+        }
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.add('hidden');
+        }
+        function handleLogin(e) {
+            e.preventDefault();
+            alert('Đăng nhập thành công! Chào mừng bạn quay lại Khu Vui Chơi.');
+            closeAuthModal();
+        }
+
+        // INIT ON WINDOW LOAD
+        window.onload = function () {
+            renderGames();
+            renderLeaderboard();
+        };
+    </script>
+</body>
 </html>
