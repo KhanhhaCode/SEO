@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Giảng & Tài Liệu - SEO CLASSROOM | Thầy Khánh Hà</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            base: '#0B0F17',
+                            card: '#151C2C',
+                            border: '#2A3447',
+                            hover: '#1E293B'
+                        },
+                        brand: {
+                            red: '#E11D48',
+                            redHover: '#BE123C',
+                            blue: '#3B82F6',
+                            gold: '#F59E0B',
+                            purple: '#8B5CF6',
+                            emerald: '#10B981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(21, 28, 44, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-red-sm {
+            box-shadow: 0 0 15px rgba(225, 29, 72, 0.3);
+        }
+        .card-hover-effect {
+            transition: all 0.25s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-3px);
+            border-color: rgba(225, 29, 72, 0.5);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5), 0 0 12px rgba(225, 29, 72, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A3447;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E11D48;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- HEADER NAVBAR -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Logo Brand -->
+            <a href="home_index.html" class="flex items-center gap-3 group shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-red to-red-800 flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-wide text-white group-hover:text-brand-red transition-colors">
+                        SEO <span class="text-brand-red">CLASSROOM</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-medium -mt-1 tracking-wider uppercase">Thầy Khánh Hà Portal</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+                <a href="home_index.html" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-gray-400"></i> Trang Chủ
+                </a>
+                <a href="bai_giang.html" class="text-white border-b-2 border-brand-red py-1 flex items-center gap-1.5 font-bold">
+                    <i class="fa-solid fa-book-open text-xs text-brand-red"></i> Bài Giảng
+                </a>
+                <a href="home_index.html#thuc-hanh" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-laptop-code text-xs text-gray-400"></i> Thực Hành
+                </a>
+                <a href="home_index.html#thong-bao" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullhorn text-xs text-gray-400"></i> Thông Báo
+                </a>
+            </nav>
+
+            <!-- Action Link Button -->
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2 bg-gradient-to-r from-brand-red to-red-600 hover:from-red-600 hover:to-brand-red text-white text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-xl shadow-lg glow-red-sm transition transform active:scale-95">
+                    <i class="fa-solid fa-gamepad text-base"></i>
+                    <span>🎮 Khu vui chơi</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full space-y-8">
+
+        <!-- LECTURE HEADER BANNER -->
+        <section class="glass-panel rounded-2xl p-6 sm:p-8 border-l-4 border-l-brand-red relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-brand-red text-9xl pointer-events-none">
+                <i class="fa-solid fa-book-bookmark"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-bold mb-3">
+                    <i class="fa-solid fa-folder-open"></i> Kho Bài Giảng & Slide Giảng Dạy Official
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                    Hệ Thống Slide Bài Giảng & Học Liệu Môn SEO
+                </h1>
+                <p class="mt-2 text-sm text-gray-300 leading-relaxed">
+                    Tra cứu, tải xuống và xem trực tuyến các bộ Slide bài giảng chính thức, tài liệu đọc thêm, bộ case study thực tế được biên soạn bởi Thầy Khánh Hà.
+                </p>
+            </div>
+        </section>
+
+        <!-- FILTER & SEARCH BAR SECTION -->
+        <section class="glass-panel p-4 rounded-2xl space-y-4">
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+                
+                <!-- Search Box -->
+                <div class="relative flex-1">
+                    <input type="text" id="searchInput" onkeyup="applyFilters()" placeholder="Tìm kiếm tên bài giảng, từ khóa chương học, định dạng..." 
+                        class="w-full bg-dark-base text-sm text-white placeholder-gray-400 pl-10 pr-4 py-2.5 rounded-xl border border-dark-border focus:outline-none focus:border-brand-red">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                </div>
+
+                <!-- Select Filters -->
+                <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 text-xs">
+                    
+                    <!-- Subject Filter -->
+                    <div class="w-full sm:w-auto">
+                        <select id="subjectFilter" onchange="applyFilters()" class="w-full bg-dark-base text-gray-200 border border-dark-border px-3 py-2.5 rounded-xl font-medium focus:outline-none focus:border-brand-red">
+                            <option value="all">📚 Tất cả Môn học</option>
+                            <option value="seo" selected>SEO & Digital Marketing</option>
+                            <option value="tmdt">Thương Mại Điện Tử</option>
+                            <option value="quantri">Quản Trị Thương Hiệu</option>
+                            <option value="kdqt">Kinh Doanh Quốc Tế</option>
+                        </select>
+                    </div>
+
+                    <!-- Resource Type Filter -->
+                    <div class="w-full sm:w-auto">
+                        <select id="typeFilter" onchange="applyFilters()" class="w-full bg-dark-base text-gray-200 border border-dark-border px-3 py-2.5 rounded-xl font-medium focus:outline-none focus:border-brand-red">
+                            <option value="all">📂 Tất cả loại Tài Liệu</option>
+                            <option value="slide">Slide Giảng Dạy (.PDF)</option>
+                            <option value="thuchanh">File Thực Hành (.ZIP/XLSX)</option>
+                            <option value="doc">Tài Liệu Đọc Thêm</option>
+                            <option value="case">Case Study Mẫu</option>
+                        </select>
+                    </div>
+
+                    <button onclick="resetFilters()" class="w-full sm:w-auto px-4 py-2.5 bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-300 font-bold rounded-xl transition shrink-0 flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-rotate-left text-xs"></i> Đặt lại
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Category Pills / Tags -->
+            <div class="flex items-center gap-2 overflow-x-auto pt-2 border-t border-dark-border/50 text-xs font-semibold">
+                <span class="text-gray-400 shrink-0">Chủ đề nhanh:</span>
+                <button onclick="filterByTag('all')" class="tag-btn active px-3 py-1.5 rounded-lg bg-brand-red text-white shrink-0">Tất cả</button>
+                <button onclick="filterByTag('chương')" class="tag-btn px-3 py-1.5 rounded-lg bg-dark-base border border-dark-border hover:border-brand-red text-gray-300 shrink-0">Các Chương SEO</button>
+                <button onclick="filterByTag('onpage')" class="tag-btn px-3 py-1.5 rounded-lg bg-dark-base border border-dark-border hover:border-brand-red text-gray-300 shrink-0">Tối ưu On-Page</button>
+                <button onclick="filterByTag('technical')" class="tag-btn px-3 py-1.5 rounded-lg bg-dark-base border border-dark-border hover:border-brand-red text-gray-300 shrink-0">Technical SEO</button>
+                <button onclick="filterByTag('keyword')" class="tag-btn px-3 py-1.5 rounded-lg bg-dark-base border border-dark-border hover:border-brand-red text-gray-300 shrink-0">Nghiên Cứu Từ Khóa</button>
+            </div>
+        </section>
+
+        <!-- CONTENT & SIDEBAR GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- MAIN LECTURE CARDS CONTAINER (2 COLUMNS) -->
+            <div class="lg:col-span-2 space-y-6">
+
+                <!-- Section Title -->
+                <div class="flex items-center justify-between border-b border-dark-border pb-3">
+                    <h2 class="text-lg font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                        <span class="w-2 h-6 bg-brand-red rounded-full"></span>
+                        DANH SÁCH BÀI GIẢNG & TÀI LIỆU (HK2 2026)
+                    </h2>
+                    <span id="counterText" class="text-xs text-gray-400 bg-dark-card px-2.5 py-1 rounded-md border border-dark-border">Đang hiện 6 bài giảng</span>
+                </div>
+
+                <!-- CARDS GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="lectureContainer">
+
+                    <!-- Lecture Card 1 -->
+                    <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" 
+                         data-subject="seo" data-type="slide" data-tag="chương overview" data-title="Chương 1: Tổng Quan Về SEO & Bot Tìm Kiếm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 1</span>
+                                <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 4.2 MB</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openPreview('Chương 1: Tổng Quan Về SEO & Bot Tìm Kiếm', '4.2 MB', '10/09/2026', 'Tổng quan về SEM, SEO, cơ chế Googlebot, Crawling, Indexing và Ranking.')">
+                                Tổng Quan Về SEO & Bot Tìm Kiếm
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                Tổng quan khái niệm SEM vs SEO, cơ chế hoạt động của Bot tìm kiếm Google, tiến trình Crawling, Indexing & Ranking.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                                <span><i class="fa-regular fa-clock"></i> Cập nhật: 10/09/2026</span>
+                                <span class="text-brand-emerald font-bold"><i class="fa-solid fa-check"></i> Slide Chính Tức</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="openPreview('Chương 1: Tổng Quan Về SEO & Bot Tìm Kiếm', '4.2 MB', '10/09/2026', 'Tổng quan về SEM, SEO, cơ chế Googlebot, Crawling, Indexing và Ranking.')" class="flex-1 py-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border text-gray-200 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-brand-blue"></i> Xem Trước
+                            </button>
+                            <button onclick="downloadFile('Slide_Chuong1_SEO_TongQuan.pdf')" class="flex-1 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl transition shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Tải Slide
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Card 2 -->
+                    <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" 
+                         data-subject="seo" data-type="slide" data-tag="keyword chương" data-title="Chương 2: Nghiên Cứu Từ Khóa & Search Intent">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 2</span>
+                                <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 5.8 MB</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openPreview('Chương 2: Nghiên Cứu Từ Khóa & Search Intent', '5.8 MB', '12/09/2026', 'Phương pháp xác định Search Intent, nhóm từ khóa theo hành vi khách hàng.')">
+                                Nghiên Cứu Từ Khóa & Search Intent
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                Phương pháp xác định Search Intent (Ý định tìm kiếm), phân tích đối thủ bằng Google Keyword Planner, Ahrefs & SEMrush.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                                <span><i class="fa-regular fa-clock"></i> Cập nhật: 12/09/2026</span>
+                                <span class="text-brand-emerald font-bold"><i class="fa-solid fa-check"></i> Slide Chính Tức</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="openPreview('Chương 2: Nghiên Cứu Từ Khóa & Search Intent', '5.8 MB', '12/09/2026', 'Phương pháp xác định Search Intent, nhóm từ khóa theo hành vi khách hàng.')" class="flex-1 py-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border text-gray-200 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-brand-blue"></i> Xem Trước
+                            </button>
+                            <button onclick="downloadFile('Slide_Chuong2_NghienCuuTuKhoa.pdf')" class="flex-1 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl transition shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Tải Slide
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Card 3 -->
+                    <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" 
+                         data-subject="seo" data-type="slide" data-tag="onpage chương" data-title="Chương 3: Kỹ Thuật Tối Ưu SEO On-Page Chuẩn">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 3</span>
+                                <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 6.1 MB</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openPreview('Chương 3: Kỹ Thuật Tối Ưu SEO On-Page Chuẩn', '6.1 MB', '15/09/2026', 'Tối ưu Title, Meta Description, Headings H1-H6, Image Alt & Internal Links.')">
+                                Kỹ Thuật Tối Ưu On-Page Chuẩn
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                Quy chuẩn tối ưu thẻ Title, Meta Description, cấu trúc Heading H1-H6, Image Alt và liên kết nội bộ Internal Link.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                                <span><i class="fa-regular fa-clock"></i> Cập nhật: 15/09/2026</span>
+                                <span class="text-brand-emerald font-bold"><i class="fa-solid fa-check"></i> Slide Chính Tức</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="openPreview('Chương 3: Kỹ Thuật Tối Ưu SEO On-Page Chuẩn', '6.1 MB', '15/09/2026', 'Tối ưu Title, Meta Description, Headings H1-H6, Image Alt & Internal Links.')" class="flex-1 py-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border text-gray-200 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-brand-blue"></i> Xem Trước
+                            </button>
+                            <button onclick="downloadFile('Slide_Chuong3_SEO_OnPage.pdf')" class="flex-1 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl transition shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Tải Slide
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Card 4 -->
+                    <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" 
+                         data-subject="seo" data-type="slide" data-tag="technical chương" data-title="Chương 4: Technical SEO & Cấu Trúc Website">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 4</span>
+                                <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 3.9 MB</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openPreview('Chương 4: Technical SEO & Cấu Trúc Website', '3.9 MB', '18/09/2026', 'Tối ưu Sitemap XML, Robots.txt, PageSpeed Core Web Vitals và HTTPS.')">
+                                Technical SEO & Cấu Trúc Website
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                Tối ưu file Robots.txt, Sitemap XML, tốc độ tải trang Core Web Vitals, Schema Markup và bảo mật HTTPS.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                                <span><i class="fa-regular fa-clock"></i> Cập nhật: 18/09/2026</span>
+                                <span class="text-brand-emerald font-bold"><i class="fa-solid fa-check"></i> Slide Chính Tức</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="openPreview('Chương 4: Technical SEO & Cấu Trúc Website', '3.9 MB', '18/09/2026', 'Tối ưu Sitemap XML, Robots.txt, PageSpeed Core Web Vitals và HTTPS.')" class="flex-1 py-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border text-gray-200 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-brand-blue"></i> Xem Trước
+                            </button>
+                            <button onclick="downloadFile('Slide_Chuong4_Technical_SEO.pdf')" class="flex-1 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl transition shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Tải Slide
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Card 5 - Excel Practice File -->
+                    <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" 
+                         data-subject="seo" data-type="thuchanh" data-tag="keyword" data-title="File Mẫu Ma Trận Từ Khóa & Phân Tích Đối Thủ">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-brand-blue text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Thực Hành</span>
+                                <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-excel text-emerald-400"></i> XLSX • 1.2 MB</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-white hover:text-brand-blue transition cursor-pointer" onclick="openPreview('File Mẫu Ma Trận Từ Khóa & Phân Tích Đối Thủ', '1.2 MB', '19/09/2026', 'Bảng tính Excel chuẩn bị sẵn công thức tính Keyword Difficulty, Search Volume & Search Intent.')">
+                                File Mẫu Ma Trận Từ Khóa & Phân Tích
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                File Excel định dạng sẵn công thức phân nhóm từ khóa chính/phụ, Search Intent và phân bổ cho cây thư mục website.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                                <span><i class="fa-regular fa-clock"></i> Cập nhật: 19/09/2026</span>
+                                <span class="text-brand-blue font-bold"><i class="fa-solid fa-file-code"></i> File Mẫu Thực Hành</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="openPreview('File Mẫu Ma Trận Từ Khóa & Phân Tích Đối Thủ', '1.2 MB', '19/09/2026', 'Bảng tính Excel chuẩn bị sẵn công thức tính Keyword Difficulty, Search Volume & Search Intent.')" class="flex-1 py-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border text-gray-200 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-brand-blue"></i> Xem Chi Tiết
+                            </button>
+                            <button onclick="downloadFile('MaTran_TuKhoa_Template.xlsx')" class="flex-1 py-2.5 bg-brand-blue hover:bg-blue-600 text-white font-bold text-xs rounded-xl transition shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Tải File (.XLSX)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Card 6 - Case Study -->
+                    <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" 
+                         data-subject="seo" data-type="case" data-tag="case" data-title="Case Study: Tăng 300% Organic Traffic Cho Web E-Commerce">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-brand-purple text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Case Study</span>
+                                <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-word text-blue-400"></i> DOCX • 8.5 MB</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-white hover:text-brand-purple transition cursor-pointer" onclick="openPreview('Case Study: Tăng 300% Organic Traffic E-Commerce', '8.5 MB', '20/09/2026', 'Phân tích chi tiết quy trình Audit và tối ưu từ 0 đến 100.000 traffic/tháng.')">
+                                Case Study: Tăng 300% Traffic E-Commerce
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                Phân tích dự án thực tế: Chiến lược cấu trúc Silo, xử lý trùng lặp nội dung danh mục và xây dựng Entity thương hiệu.
+                            </p>
+                            <div class="mt-3 flex items-center justify-between text-[11px] text-gray-500 font-medium">
+                                <span><i class="fa-regular fa-clock"></i> Cập nhật: 20/09/2026</span>
+                                <span class="text-brand-purple font-bold"><i class="fa-solid fa-star"></i> Đọc Thêm Tham Khảo</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="openPreview('Case Study: Tăng 300% Traffic E-Commerce', '8.5 MB', '20/09/2026', 'Phân tích chi tiết quy trình Audit và tối ưu từ 0 đến 100.000 traffic/tháng.')" class="flex-1 py-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border text-gray-200 font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-brand-blue"></i> Xem Trước
+                            </button>
+                            <button onclick="downloadFile('CaseStudy_Ecommerce_SEO.docx')" class="flex-1 py-2.5 bg-brand-purple hover:bg-purple-600 text-white font-bold text-xs rounded-xl transition shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Tải Tài Liệu
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SIDEBAR COLUMN (1 COLUMN) -->
+            <div class="space-y-6">
+
+                <!-- SIDEBAR CARD 1: LỊCH HỌC & QUY ĐỊNH NỘP BÀI -->
+                <div class="glass-panel rounded-2xl p-5 border border-dark-border">
+                    <div class="flex items-center gap-2 pb-3 mb-3 border-b border-dark-border">
+                        <i class="fa-solid fa-clipboard-list text-brand-red text-lg"></i>
+                        <h3 class="font-extrabold text-sm text-white uppercase tracking-wide">QUY ĐỊNH & LƯU Ý BÀI TẬP</h3>
+                    </div>
+                    <div class="space-y-3 text-xs leading-relaxed text-gray-300">
+                        <div class="p-3 bg-red-950/20 border border-brand-red/30 rounded-xl">
+                            <p class="font-bold text-brand-red mb-1"><i class="fa-solid fa-circle-exclamation"></i> QUY ĐỊNH ĐỒ ÁN MÔN HỌC:</p>
+                            <ul class="list-disc list-inside space-y-1 text-[11px] text-gray-300">
+                                <li>Nộp 01 bản Word trực tuyến + 01 Bản in đóng bìa kiếng.</li>
+                                <li><strong class="text-white">KHÔNG thuyết trình:</strong> Giảng viên chấm điểm dựa trên chỉ số Index và Organic Traffic thực tế.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3 bg-dark-base border border-dark-border rounded-xl space-y-1 text-[11px]">
+                            <p class="font-bold text-white"><i class="fa-regular fa-calendar-check text-brand-gold"></i> Thời gian tư vấn trực tiếp:</p>
+                            <p class="text-gray-400">• Thứ 3 & Thứ 5 (14:00 - 16:30) tại Văn phòng khoa.</p>
+                            <p class="text-gray-400">• Email nhận bài: <span class="text-brand-red font-semibold">giangvien.khanhha@gmail.com</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIDEBAR CARD 2: CASE STUDY & ĐỀ TÀI MẪU -->
+                <div class="glass-panel rounded-2xl p-5 border border-dark-border">
+                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-dark-border">
+                        <h3 class="font-extrabold text-sm text-white uppercase tracking-wide flex items-center gap-2">
+                            <i class="fa-solid fa-lightbulb text-brand-gold"></i> ĐỀ TÀI MẪU XIN THAM KHẢO
+                        </h3>
+                    </div>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="p-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border rounded-xl transition cursor-pointer" onclick="openPreview('Đề Tài Mẫu: SEO Cho Web Thời Trang Local Brand', '3.1 MB', '15/09/2026', 'Mẫu đề tài nghiên cứu từ khóa ngành hàng thời trang trẻ.')">
+                            <p class="font-bold text-gray-200 hover:text-brand-red transition">1. SEO Web Thời Trang Local Brand</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Lĩnh vực: Thương mại điện tử / SEO</p>
+                        </li>
+                        <li class="p-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border rounded-xl transition cursor-pointer" onclick="openPreview('Đề Tài Mẫu: Audit SEO Website Dịch Vụ Du Lịch', '4.5 MB', '16/09/2026', 'Mẫu báo cáo Audit Technical SEO và cấu trúc URLs.')">
+                            <p class="font-bold text-gray-200 hover:text-brand-red transition">2. Audit SEO Website Du Lịch</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Lĩnh vực: Technical SEO & On-Page</p>
+                        </li>
+                        <li class="p-2.5 bg-dark-base hover:bg-dark-hover border border-dark-border rounded-xl transition cursor-pointer" onclick="openPreview('Đề Tài Mẫu: Xây Dựng Entity Cho Thương Hiệu Mới', '2.8 MB', '17/09/2026', 'Xây dựng sự hiện diện thương hiệu trên các trang mạng xã hội lớn.')">
+                            <p class="font-bold text-gray-200 hover:text-brand-red transition">3. Cấu Trúc Entity Thương Hiệu Mới</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Lĩnh vực: Off-Page & Brand Management</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 border-t border-dark-border bg-dark-card/60 backdrop-blur py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-red flex items-center justify-center text-white font-bold text-sm">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="font-extrabold text-sm text-white">SEO CLASSROOM • THẦY KHÁNH HÀ</span>
+            </div>
+            <p class="text-xs text-gray-500 text-center md:text-right">
+                © 2026 Portal Học Tập & Giảng Dạy Môn SEO. Giao diện Dark Mode đồng nhất.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SLIDE PREVIEW MODAL (PDF PREVIEWER SIMULATION) -->
+    <div id="previewModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+        <div class="bg-dark-card border border-dark-border w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            
+            <!-- Modal Header -->
+            <div class="p-4 bg-dark-base border-b border-dark-border flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-brand-red/20 text-brand-red flex items-center justify-center text-lg font-bold">
+                        <i class="fa-regular fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 id="modalTitle" class="font-bold text-white text-sm sm:text-base leading-tight">Tên Bài Giảng</h3>
+                        <p id="modalMeta" class="text-[11px] text-gray-400">PDF • Dung lượng: 4.2 MB • Cập nhật: 10/09/2026</p>
+                    </div>
+                </div>
+                <button onclick="closePreview()" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-dark-border transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Simulated Slide Canvas) -->
+            <div class="p-6 bg-slate-950 flex-1 overflow-y-auto space-y-4">
+                
+                <!-- Simulated Slide Frame Page 1 -->
+                <div class="w-full aspect-[16/9] bg-dark-card border border-dark-border rounded-xl p-6 flex flex-col justify-between relative shadow-lg">
+                    <div class="flex justify-between items-center text-xs text-gray-400 border-b border-dark-border/50 pb-2">
+                        <span class="font-bold text-brand-red">SEO CLASSROOM • THẦY KHÁNH HÀ</span>
+                        <span>Trang 01 / 24</span>
+                    </div>
+                    <div class="my-auto text-center space-y-3">
+                        <h2 id="slideHeading" class="text-xl sm:text-2xl font-black text-white">TIÊU ĐỀ BÀI GIẢNG</h2>
+                        <p id="slideDesc" class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto">Mô tả nội dung bài giảng slide học tập môn SEO & Digital Marketing.</p>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] text-gray-500 pt-2 border-t border-dark-border/50">
+                        <span>Tài liệu lưu hành nội bộ</span>
+                        <span>Cập nhật Kì Học 2026</span>
+                    </div>
+                </div>
+
+                <!-- Simulated Slide Frame Page 2 -->
+                <div class="w-full aspect-[16/9] bg-dark-card border border-dark-border rounded-xl p-6 flex flex-col justify-between relative shadow-lg opacity-90">
+                    <div class="flex justify-between items-center text-xs text-gray-400 border-b border-dark-border/50 pb-2">
+                        <span class="font-bold text-brand-red">MỤC TIÊU BÀI HỌC</span>
+                        <span>Trang 02 / 24</span>
+                    </div>
+                    <div class="my-auto space-y-2 text-xs text-gray-300 px-4">
+                        <p>✔ Nắm vững khái niệm nền tảng và nguyên lý vận hành hệ thống.</p>
+                        <p>✔ Áp dụng thực hành trực tiếp trên website bài tập nhóm.</p>
+                        <p>✔ Hoàn thành các chỉ số KPI trước thời hạn kết thúc học phần.</p>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] text-gray-500 pt-2 border-t border-dark-border/50">
+                        <span>Nội dung chính</span>
+                        <span>Chương Học Official</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="p-3.5 bg-dark-base border-t border-dark-border flex items-center justify-between gap-3 text-xs">
+                <span class="text-gray-400">Xem trước chế độ đơn giản</span>
+                <div class="flex items-center gap-2">
+                    <button onclick="closePreview()" class="px-4 py-2 bg-dark-hover text-gray-300 font-bold rounded-xl border border-dark-border hover:bg-dark-border transition">
+                        Đóng
+                    </button>
+                    <button onclick="downloadFile('Slide_Current.pdf')" class="px-5 py-2 bg-brand-red hover:bg-brand-redHover text-white font-bold rounded-xl transition shadow flex items-center gap-1.5">
+                        <i class="fa-solid fa-download"></i> Tải Ngay
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let activeTag = 'all';
+
+        // Open Slide Preview Modal
+        function openPreview(title, size, date, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMeta').innerText = `PDF • Dung lượng: ${size} • Cập nhật: ${date}`;
+            document.getElementById('slideHeading').innerText = title;
+            document.getElementById('slideDesc').innerText = desc;
+            document.getElementById('previewModal').classList.remove('hidden');
+        }
+
+        // Close Slide Preview Modal
+        function closePreview() {
+            document.getElementById('previewModal').classList.add('hidden');
+        }
+
+        // Download Action Simulation
+        function downloadFile(filename) {
+            alert(`Đang tiến hành tải xuống tài liệu: ${filename}`);
+        }
+
+        // Filter Functionality
+        function applyFilters() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+            const subjectVal = document.getElementById('subjectFilter').value;
+            const typeVal = document.getElementById('typeFilter').value;
+
+            const cards = document.querySelectorAll('.lecture-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const subject = card.getAttribute('data-subject');
+                const type = card.getAttribute('data-type');
+                const tag = card.getAttribute('data-tag');
+                const text = card.innerText.toLowerCase();
+
+                const matchSearch = text.includes(searchVal) || title.includes(searchVal);
+                const matchSubject = (subjectVal === 'all') || (subject === subjectVal);
+                const matchType = (typeVal === 'all') || (type === typeVal);
+                const matchTag = (activeTag === 'all') || tag.includes(activeTag);
+
+                if (matchSearch && matchSubject && matchType && matchTag) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('counterText').innerText = `Đang hiện ${visibleCount} tài liệu`;
+        }
+
+        // Tag Button Quick Selection
+        function filterByTag(tag) {
+            activeTag = tag;
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-red', 'text-white');
+                btn.classList.add('bg-dark-base', 'text-gray-300');
+            });
+            event.target.classList.remove('bg-dark-base', 'text-gray-300');
+            event.target.classList.add('bg-brand-red', 'text-white');
+            applyFilters();
+        }
+
+        // Reset Filters
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('subjectFilter').value = 'seo';
+            document.getElementById('typeFilter').value = 'all';
+            activeTag = 'all';
+            applyFilters();
+        }
+    </script>
+</body>
+</html>
