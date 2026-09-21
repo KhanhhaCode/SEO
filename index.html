@@ -1,418 +1,529 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta name="google-site-verification" content="A_8vESnV7a1L0OzH9Hfm9txtKwms-etrwErXA5_ZB-E" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Meta SEO On-Page -->
-    <title>Cổng Thông Tin Học Tập & Bài Giảng SEO - Thầy Khánh</title>
-    <meta name="description" content="Trung tâm tài liệu học tập, slide bài giảng môn SEO, Marketing Online và các công cụ thực hành dành cho sinh viên.">
-    <meta name="keywords" content="bai giang seo, hoc seo online, tai lieu seo, thuc hanh seo">
-    <meta name="robots" content="index, follow">
+    <title>SEO CLASSROOM - THẦY KHÁNH HÀ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            base: '#0B0F17',
+                            card: '#151C2C',
+                            border: '#2A3447',
+                            hover: '#1E293B'
+                        },
+                        brand: {
+                            red: '#E11D48',
+                            redHover: '#BE123C',
+                            blue: '#3B82F6',
+                            gold: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        :root {
-            --bg-dark: #12171e;
-            --bg-card: #1b222d;
-            --bg-header: #0b0e13;
-            --accent-red: #e50914;
-            --accent-blue: #0071e3;
-            --text-main: #e5e5e5;
-            --text-sub: #999999;
-            --border-color: #2b3544;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.5;
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-
-        /* Header & Navigation Bar */
-        header {
-            background-color: var(--bg-header);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .glass-panel {
+            background: rgba(21, 28, 44, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .glow-red-sm {
+            box-shadow: 0 0 15px rgba(225, 29, 72, 0.3);
         }
-
-        .logo {
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .card-hover-effect {
+            transition: all 0.25s ease-in-out;
         }
-
-        .logo span { color: var(--accent-red); }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-sub);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #ffffff;
-        }
-
-        .btn-game-nav {
-            background-color: var(--accent-red);
-            color: #ffffff !important;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        .btn-game-nav:hover {
-            background-color: #b80710;
-        }
-
-        /* Bố Cục Chính (2 Cột) */
-        .main-layout {
-            max-width: 1200px;
-            margin: 25px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 25px;
-        }
-
-        /* Cột Trái (Content) */
-        .hero-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-left: 4px solid var(--accent-red);
-        }
-
-        .hero-box h1 {
-            font-size: 20px;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .hero-box p {
-            color: var(--text-sub);
-            font-size: 14px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-
-        .section-title {
-            font-size: 16px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 16px;
-            background-color: var(--accent-red);
-        }
-
-        /* Danh Sách Card */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 15px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .card:hover {
+        .card-hover-effect:hover {
             transform: translateY(-3px);
-            border-color: var(--accent-red);
+            border-color: rgba(225, 29, 72, 0.5);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5), 0 0 12px rgba(225, 29, 72, 0.2);
         }
-
-        .card-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: var(--accent-red);
-            color: #fff;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 3px;
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        .card h3 {
-            font-size: 15px;
-            color: #ffffff;
-            margin-top: 15px;
-            margin-bottom: 8px;
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
         }
-
-        .card p {
-            font-size: 13px;
-            color: var(--text-sub);
-            margin-bottom: 15px;
-        }
-
-        .btn-action {
-            display: block;
-            text-align: center;
-            background-color: #2b3544;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px;
+        ::-webkit-scrollbar-thumb {
+            background: #2A3447;
             border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            transition: 0.2s;
         }
-
-        .btn-action:hover {
-            background-color: var(--accent-blue);
-        }
-
-        /* Cột Phải (Sidebar Top SEO) */
-        .sidebar-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .sidebar-title {
-            font-size: 14px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .top-list { list-style: none; }
-
-        .top-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .top-number {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--text-sub);
-            width: 20px;
-            text-align: center;
-        }
-
-        .top-item:nth-child(1) .top-number { color: var(--accent-red); }
-        .top-item:nth-child(2) .top-number { color: #ff9800; }
-        .top-item:nth-child(3) .top-number { color: #ffeb3b; }
-
-        .top-info h4 {
-            font-size: 13px;
-            color: #ffffff;
-            margin-bottom: 2px;
-        }
-
-        .top-info p {
-            font-size: 11px;
-            color: var(--text-sub);
-        }
-
-        footer {
-            background-color: var(--bg-header);
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            padding: 20px;
-            color: var(--text-sub);
-            font-size: 13px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .main-layout { grid-template-columns: 1fr; }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E11D48;
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-red selection:text-white">
 
-    <!-- Header Navigation Bar -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <span>SEO</span>CLASSROOM
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Logo Brand -->
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-red to-red-800 flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-wide text-white group-hover:text-brand-red transition-colors">
+                        SEO <span class="text-brand-red">CLASSROOM</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-medium -mt-1 tracking-wider uppercase">Thầy Khánh Hà Portal</span>
+                </div>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Trang Chủ</a></li>
-                    <li><a href="#bai-giang">Bài Giảng</a></li>
-                    <li><a href="#thuc-hanh">Thực Hành</a></li>
-                    <li><a href="game.html" class="btn-game-nav">🎮 Khu vui chơi</a></li>
-                </ul>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+                <a href="#trang-chu" class="text-white hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-brand-red"></i> Trang Chủ
+                </a>
+                <a href="#bai-giang" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open text-xs text-gray-400"></i> Bài Giảng
+                </a>
+                <a href="#thuc-hanh" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-laptop-code text-xs text-gray-400"></i> Thực Hành
+                </a>
+                <a href="#thong-bao" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullhorn text-xs text-gray-400"></i> Thông Báo
+                </a>
             </nav>
+
+            <!-- Action Button - Link to Games Zone -->
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2 bg-gradient-to-r from-brand-red to-red-600 hover:from-red-600 hover:to-brand-red text-white text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-xl shadow-lg glow-red-sm transition transform active:scale-95">
+                    <i class="fa-solid fa-gamepad text-base"></i>
+                    <span>🎮 Khu vui chơi</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Main Layout Grid -->
-    <div class="main-layout">
-        
-        <!-- Cột Nội Dung Chính -->
-        <main>
-            <div class="hero-box">
-                <h1>Hệ Thống Bài Giảng & Tài Nguyên Môn SEO</h1>
-                <p>Cập nhật slide bài giảng, bài tập thực hành On-Page, Off-Page và các công cụ hỗ trợ dành riêng cho sinh viên.</p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full space-y-8" id="trang-chu">
+
+        <!-- HERO BANNER CARD -->
+        <section class="glass-panel rounded-2xl p-6 sm:p-8 border-l-4 border-l-brand-red relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-brand-red text-9xl pointer-events-none">
+                <i class="fa-solid fa-chart-line"></i>
             </div>
-
-            <!-- Khối Bài Giảng -->
-            <div class="section-header" id="bai-giang">
-                <div class="section-title">Slide Bài Giảng Mới Nhất</div>
-            </div>
-
-            <div class="card-grid">
-                <div class="card">
-                    <span class="card-badge">Chương 1</span>
-                    <h3>Tổng Quan Về SEO</h3>
-                    <p>Cơ chế hoạt động của Bot tìm kiếm, Crawling & Indexing.</p>
-                    <a href="#" class="btn-action">📥 Tải Bài Giảng</a>
+            <div class="relative z-10 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-bold mb-3">
+                    <i class="fa-solid fa-fire text-brand-red"></i> Kì Học 2026 - Môn SEO & Digital Marketing
                 </div>
-
-                <div class="card">
-                    <span class="card-badge">Chương 2</span>
-                    <h3>Nghiên Cứu Từ Khóa</h3>
-                    <p>Xác định Search Intent, sử dụng Google Keyword Planner.</p>
-                    <a href="#" class="btn-action">📥 Tải Bài Giảng</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-badge">Chương 3</span>
-                    <h3>Tối Ưu On-Page</h3>
-                    <p>Chuẩn hóa thẻ Title, Meta Description, Headings và Image.</p>
-                    <a href="#" class="btn-action">📥 Tải Bài Giảng</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-badge">Chương 4</span>
-                    <h3>Technical SEO</h3>
-                    <p>Cấu trúc Sitemap XML, Robots.txt và tối ưu tốc độ tải trang.</p>
-                    <a href="#" class="btn-action">📥 Tải Bài Giảng</a>
+                <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                    Hệ Thống Bài Giảng & Tài Nguyên Môn SEO
+                </h1>
+                <p class="mt-2 text-sm text-gray-300 leading-relaxed">
+                    Cập nhật đầy đủ slide bài giảng, bài tập thực hành On-Page, Off-Page, Technical SEO và các công cụ hỗ trợ phân tích từ khóa dành riêng cho sinh viên Thầy Khánh Hà.
+                </p>
+                
+                <!-- Quick Search & Filter Bar -->
+                <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <input type="text" id="searchResourcesInput" onkeyup="filterContent()" placeholder="Tìm kiếm tên bài giảng, tài liệu, bài tập..." 
+                            class="w-full bg-dark-base text-sm text-white placeholder-gray-400 pl-10 pr-4 py-3 rounded-xl border border-dark-border focus:outline-none focus:border-brand-red">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                    </div>
+                    <button onclick="clearSearch()" class="px-5 py-3 bg-dark-card hover:bg-dark-hover border border-dark-border text-xs font-bold text-gray-300 rounded-xl transition shrink-0">
+                        Làm mới
+                    </button>
                 </div>
             </div>
+        </section>
 
-            <!-- Khối Bài Tập -->
-            <div class="section-header" id="thuc-hanh">
-                <div class="section-title">Thực Hành & Bài Tập</div>
-            </div>
+        <!-- GRID LAYOUT: MAIN CONTENT (LEFT) + SIDEBAR (RIGHT) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <div class="card-grid">
-                <div class="card">
-                    <span class="card-badge" style="background-color: var(--accent-blue);">Bài Tập 1</span>
-                    <h3>Tối Ưu Thẻ Meta</h3>
-                    <p>Thực hành sửa thẻ Title/Description trên trang GitHub Pages cá nhân.</p>
-                    <a href="#" class="btn-action">Nộp Bài Tập</a>
-                </div>
+            <!-- MAIN CONTENT AREA (2 COLUMNS) -->
+            <div class="lg:col-span-2 space-y-8">
 
-                <div class="card">
-                    <span class="card-badge" style="background-color: var(--accent-blue);">Bài Tập 2</span>
-                    <h3>Search Console</h3>
-                    <p>Khai báo website cá nhân và theo dõi index trên Google.</p>
-                    <a href="#" class="btn-action">Nộp Bài Tập</a>
-                </div>
-            </div>
-        </main>
+                <!-- SECTION 1: SLIDE BÀI GIẢNG -->
+                <section id="bai-giang" class="space-y-4">
+                    <div class="flex items-center justify-between border-b border-dark-border pb-3">
+                        <h2 class="text-lg font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-red rounded-full"></span>
+                            SLIDE BÀI GIẢNG MỚI NHẤT
+                        </h2>
+                        <span class="text-xs text-gray-400">HK2 - 2026</span>
+                    </div>
 
-        <!-- Sidebar Bên Phải (Mô Phỏng Bảng Xếp Hạng Top Xem Nhiều) -->
-        <aside>
-            <div class="sidebar-box">
-                <div class="sidebar-title">🔥 Bảng Tin HOT</div>
-                <ul class="top-list">
-                    <li class="top-item">
-                        <div class="top-number">1</div>
-                        <div class="top-info">
-                            <h4>Lịch thi Giữa kỳ môn SEO</h4>
-                            <p>Cập nhật: 2 ngày trước</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="lecturesGrid">
+
+                        <!-- Lecture Item 1 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 1 tổng quan seo crawling indexing">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 1</span>
+                                    <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 4.2 MB</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 1: Tổng Quan Về SEO', 'Slide tổng quan kiến thức SEO, cơ chế hoạt động của Google Bot, Crawling, Indexing & Ranking.', 'https://example.com/slide1.pdf')">
+                                    Tổng Quan Về SEO
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                    Cơ chế hoạt động của Bot tìm kiếm, quy trình Crawling, Indexing và thuật toán xếp hạng từ khóa.
+                                </p>
+                            </div>
+                            <button onclick="openDocModal('Chương 1: Tổng Quan Về SEO', 'Cơ chế hoạt động của Bot tìm kiếm, Crawling & Indexing.', 'Slide_Chuong_1_Tong_Quan_SEO.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-brand-red"></i> Tải Bài Giảng
+                            </button>
                         </div>
-                    </li>
-                    <li class="top-item">
-                        <div class="top-number">2</div>
-                        <div class="top-info">
-                            <h4>Hướng dẫn tạo web trên GitHub</h4>
-                            <p>Cập nhật: 5 ngày trước</p>
+
+                        <!-- Lecture Item 2 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 2 nghiên cứu từ khóa search intent keyword planner">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 2</span>
+                                    <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 5.8 MB</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 2: Nghiên Cứu Từ Khóa', 'Phương pháp xác định Search Intent và xây dựng ma trận từ khóa.', 'Slide_Chuong_2_Nghien_Cuu_Tu_Khoa.pdf')">
+                                    Nghiên Cứu Từ Khóa
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                    Xác định Ý định tìm kiếm (Search Intent), sử dụng Google Keyword Planner & Ahrefs.
+                                </p>
+                            </div>
+                            <button onclick="openDocModal('Chương 2: Nghiên Cứu Từ Khóa', 'Xác định Search Intent, sử dụng Google Keyword Planner.', 'Slide_Chuong_2_Nghien_Cuu_Tu_Khoa.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-brand-red"></i> Tải Bài Giảng
+                            </button>
                         </div>
-                    </li>
-                    <li class="top-item">
-                        <div class="top-number">3</div>
-                        <div class="top-info">
-                            <h4>Danh sách Nhóm Đồ Án</h4>
-                            <p>Cập nhật: Tuần trước</p>
+
+                        <!-- Lecture Item 3 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 3 tối ưu on-page title meta description headings">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 3</span>
+                                    <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 6.1 MB</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 3: Tối Ưu On-Page', 'Kỹ thuật tối ưu Title, Meta Description, Heading H1-H6 và thẻ Image Alt.', 'Slide_Chuong_3_OnPage.pdf')">
+                                    Tối Ưu On-Page
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                    Chuẩn hóa thẻ Title, Meta Description, Headings, Alt Image và cấu trúc liên kết nội bộ (Internal Link).
+                                </p>
+                            </div>
+                            <button onclick="openDocModal('Chương 3: Tối Ưu On-Page', 'Chuẩn hóa thẻ Title, Meta Description, Headings và Image.', 'Slide_Chuong_3_OnPage.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-brand-red"></i> Tải Bài Giảng
+                            </button>
                         </div>
-                    </li>
-                    <li class="top-item">
-                        <div class="top-number">4</div>
-                        <div class="top-info">
-                            <h4>Tiêu chí đánh giá On-Page</h4>
-                            <p>Cập nhật: 2 tuần trước</p>
+
+                        <!-- Lecture Item 4 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 4 technical seo sitemap robots txt speed">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 4</span>
+                                    <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 3.9 MB</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 4: Technical SEO', 'Tối ưu kỹ thuật website: Sitemap XML, Robots.txt, PageSpeed.', 'Slide_Chuong_4_Technical_SEO.pdf')">
+                                    Technical SEO
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                    Cấu trúc Sitemap XML, file Robots.txt, tối ưu tốc độ tải trang (Core Web Vitals) và Schema Markup.
+                                </p>
+                            </div>
+                            <button onclick="openDocModal('Chương 4: Technical SEO', 'Cấu trúc Sitemap XML, Robots.txt và tối ưu tốc độ tải trang.', 'Slide_Chuong_4_Technical_SEO.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-brand-red"></i> Tải Bài Giảng
+                            </button>
                         </div>
-                    </li>
-                </ul>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 2: THỰC HÀNH & BÀI TẬP LỚN -->
+                <section id="thuc-hanh" class="space-y-4">
+                    <div class="flex items-center justify-between border-b border-dark-border pb-3">
+                        <h2 class="text-lg font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-blue rounded-full"></span>
+                            THỰC HÀNH & BÀI TẬP LỚN
+                        </h2>
+                        <span class="text-xs text-gray-400">Yêu cầu bắt buộc</span>
+                    </div>
+
+                    <div class="space-y-4" id="assignmentsList">
+
+                        <!-- Assignment Item 1 -->
+                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="bài tập 1 tối ưu thẻ meta description title">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-brand-blue text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md">Bài Tập 1</span>
+                                    <span class="text-xs text-brand-gold font-semibold"><i class="fa-regular fa-calendar-check"></i> Hạn nộp: 23:59 - Thứ 7 tuần này</span>
+                                </div>
+                                <h3 class="font-bold text-base text-white">Thực Hành Tối Ưu Thẻ Meta & Cấu Trúc Content</h3>
+                                <p class="text-xs text-gray-400">
+                                    Thực hành sửa thẻ Title/Description trên mã nguồn mẫu và kiểm tra chuẩn hóa đoạn snippet bằng Yoast SEO.
+                                </p>
+                            </div>
+                            <button onclick="openAssignmentModal('Bài Tập 1: Tối Ưu Thẻ Meta', 'Sinh viên thực hiện tối ưu theo bộ từ khóa đã phân công. Nộp file Word báo cáo hình ảnh trước và sau khi tối ưu.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-blue/20 border border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs rounded-xl transition shrink-0">
+                                Chi Tiết & Yêu Cầu
+                            </button>
+                        </div>
+
+                        <!-- Assignment Item 2 -->
+                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="bài tập 2 search console google analytics báo cáo">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-brand-blue text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md">Bài Tập 2</span>
+                                    <span class="text-xs text-brand-gold font-semibold"><i class="fa-regular fa-calendar-check"></i> Hạn nộp: 23:59 - Tuần tới</span>
+                                </div>
+                                <h3 class="font-bold text-base text-white">Cấu Hình Google Search Console & GA4</h3>
+                                <p class="text-xs text-gray-400">
+                                    Khai báo website cá nhân/nhóm vào Search Console, tạo sitemap và lập chỉ mục thử nghiệm.
+                                </p>
+                            </div>
+                            <button onclick="openAssignmentModal('Bài Tập 2: Khai báo Search Console', 'Cung cấp quyền Reader cho email giangvien.khanhha@gmail.com và chụp ảnh xác minh tên miền thành công.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-blue/20 border border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs rounded-xl transition shrink-0">
+                                Chi Tiết & Yêu Cầu
+                            </button>
+                        </div>
+
+                        <!-- Assignment Item 3 - Major Project -->
+                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-brand-red/40 bg-gradient-to-r from-dark-card to-red-950/20 card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="đồ án môn học website seo Audit onpage offpage">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-brand-red text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md">Đồ Án Cuối Kỳ</span>
+                                    <span class="text-xs text-red-400 font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Chiếm 50% tổng điểm</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white">Xây Dựng & Audit SEO Cho Website Doanh Nghiệp</h3>
+                                <p class="text-xs text-gray-300">
+                                    Thực hiện theo nhóm (4-5 SV): Lập ma trận từ khóa, xây dựng nội dung chuẩn SEO, Audit Technical và lập báo cáo Traffic.
+                                </p>
+                            </div>
+                            <button onclick="openAssignmentModal('ĐỒ ÁN CUỐI KỲ: AUDIT & SEO WEBSITE', 'Yêu cầu: Nộp 01 bản in báo cáo (đóng bìa kiếng) + 01 file Word qua hệ thống. Sinh viên KHÔNG cần thuyết trình, giảng viên chấm trực tiếp dựa trên chỉ số Index và Organic Traffic thực tế.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl shadow-lg transition shrink-0">
+                                Xem Quy Định Đồ Án
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
             </div>
-        </aside>
 
-    </div>
+            <!-- RIGHT SIDEBAR (1 COLUMN) -->
+            <div class="space-y-6" id="thong-bao">
 
-    <footer>
-        <p>© 2026 Cổng Thông Tin Giảng Dạy SEO. Thiết kế Dark Mode UI.</p>
+                <!-- SIDEBAR CARD 1: BẢNG TIN HOT / THÔNG BÁO -->
+                <div class="glass-panel rounded-2xl p-5 border border-dark-border">
+                    <div class="flex items-center gap-2 pb-3 mb-4 border-b border-dark-border">
+                        <i class="fa-solid fa-fire text-brand-red text-lg"></i>
+                        <h3 class="font-extrabold text-base text-white tracking-wide uppercase">BẢNG TIN HOT</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Notice item 1 -->
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Lịch Thi Giữa Kỳ Môn SEO', 'Thi trắc nghiệm kết hợp thực hành trên máy tính vào Ca 2 ngày 15/10/2026 tại Phòng Lab 402.')">
+                            <span class="font-extrabold text-lg text-brand-red shrink-0 w-4">1</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
+                                    Lịch thi Giữa kỳ môn SEO
+                                </h4>
+                                <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: 2 ngày trước</p>
+                            </div>
+                        </div>
+
+                        <!-- Notice item 2 -->
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Hướng dẫn tạo web trên GitHub Pages', 'Tất cả các nhóm tiến hành tạo Repository theo cú pháp: [TênNhóm]-SEO-2026.')">
+                            <span class="font-extrabold text-lg text-brand-gold shrink-0 w-4">2</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
+                                    Hướng dẫn tạo web trên GitHub
+                                </h4>
+                                <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: 5 ngày trước</p>
+                            </div>
+                        </div>
+
+                        <!-- Notice item 3 -->
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Danh sách Nhóm Đồ Án Cuối Kỳ', 'Trưởng nhóm kiểm tra danh sách thành viên và đề tài website đã đăng ký.')">
+                            <span class="font-extrabold text-lg text-brand-blue shrink-0 w-4">3</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
+                                    Danh sách Nhóm Đồ Án
+                                </h4>
+                                <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: Tuần trước</p>
+                            </div>
+                        </div>
+
+                        <!-- Notice item 4 -->
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Tiêu chí đánh giá On-Page chuẩn', 'Đánh giá dựa trên độ dài bài viết (>1200 từ), vị trí keyword, mật độ từ khóa 2-3% và chỉ số On-Page Score.')">
+                            <span class="font-extrabold text-lg text-gray-500 shrink-0 w-4">4</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
+                                    Tiêu chí đánh giá On-Page
+                                </h4>
+                                <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: 2 tuần trước</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIDEBAR CARD 2: QUY ĐỊNH NỘP BÀI -->
+                <div class="glass-panel rounded-2xl p-5 border border-dark-border bg-dark-card/50">
+                    <div class="flex items-center gap-2 pb-3 mb-3 border-b border-dark-border">
+                        <i class="fa-solid fa-circle-exclamation text-brand-gold text-lg"></i>
+                        <h3 class="font-extrabold text-sm text-white uppercase tracking-wide">QUY ĐỊNH & LƯU Ý</h3>
+                    </div>
+                    <ul class="text-xs text-gray-300 space-y-2.5 list-disc list-inside leading-relaxed">
+                        <li>
+                            <strong class="text-white">Hình thức nộp:</strong> File Word online + Bản in đóng bìa kiếng.
+                        </li>
+                        <li>
+                            <strong class="text-white">Thuyết trình:</strong> <span class="text-red-400 font-bold">KHÔNG thuyết trình</span>, chấm trực tiếp trên sản phẩm.
+                        </li>
+                        <li>
+                            <strong class="text-white">Tiêu chuẩn:</strong> Báo cáo đầy đủ hình ảnh minh họa, từ khóa lên TOP và lượng truy cập thực tế.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 border-t border-dark-border bg-dark-card/60 backdrop-blur py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-red flex items-center justify-center text-white font-bold text-sm">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="font-extrabold text-sm text-white">SEO CLASSROOM • THẦY KHÁNH HÀ</span>
+            </div>
+            <p class="text-xs text-gray-500 text-center md:text-right">
+                © 2026 Portal Học Tập & Giảng Dạy Môn SEO. Giao diện đồng nhất hệ thống Khu Vui Chơi.
+            </p>
+        </div>
     </footer>
 
+    <!-- GENERIC MODAL FOR DOWNLOADS / ASSIGNMENT / NOTICES -->
+    <div id="infoModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-dark-card border border-dark-border w-full max-w-lg rounded-2xl p-6 relative shadow-2xl space-y-4">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="flex items-center gap-3">
+                <div id="modalIcon" class="w-10 h-10 rounded-xl bg-brand-red/20 text-brand-red flex items-center justify-center font-bold text-xl shrink-0">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div>
+                    <h3 id="modalTitle" class="text-base font-extrabold text-white">Tên tài liệu</h3>
+                    <p id="modalSubtitle" class="text-xs text-brand-red font-semibold">Thông tin chi tiết</p>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-dark-base rounded-xl border border-dark-border text-xs text-gray-300 leading-relaxed" id="modalBody">
+                Nội dung chi tiết sẽ hiển thị ở đây...
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <button onclick="closeModal()" class="px-4 py-2 bg-dark-hover text-gray-300 text-xs font-bold rounded-xl border border-dark-border hover:bg-dark-border transition">
+                    Đóng
+                </button>
+                <button id="modalActionBtn" onclick="simulatedDownload()" class="px-5 py-2 bg-brand-red hover:bg-brand-redHover text-white text-xs font-bold rounded-xl shadow transition flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Tải Tài Liệu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Modal functions
+        function openDocModal(title, description, fileName) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = "Tài liệu học tập • Slide chính thức";
+            document.getElementById('modalBody').innerHTML = `
+                <p class="mb-2">${description}</p>
+                <div class="p-2.5 bg-dark-card rounded-lg border border-dark-border text-[11px] text-gray-400 font-mono">
+                    Tên file: <span class="text-white">${fileName}</span>
+                </div>
+            `;
+            document.getElementById('modalActionBtn').style.display = 'inline-flex';
+            document.getElementById('infoModal').classList.remove('hidden');
+        }
+
+        function openAssignmentModal(title, details) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = "Hướng dẫn & Yêu cầu nộp bài";
+            document.getElementById('modalBody').innerHTML = `
+                <div class="space-y-2">
+                    <p class="text-white font-bold">📋 Yêu cầu chi tiết:</p>
+                    <p>${details}</p>
+                    <div class="p-3 bg-red-950/30 border border-brand-red/30 rounded-lg text-red-300 text-[11px] mt-2">
+                        ⚠️ <strong>Lưu ý:</strong> Nộp đúng hạn qua hệ thống. Mọi trường hợp trễ hạn sẽ bị trừ 10% điểm/ngày.
+                    </div>
+                </div>
+            `;
+            document.getElementById('modalActionBtn').style.display = 'none';
+            document.getElementById('infoModal').classList.remove('hidden');
+        }
+
+        function openNoticeModal(title, content) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = "Thông báo từ Thầy Khánh Hà";
+            document.getElementById('modalBody').innerText = content;
+            document.getElementById('modalActionBtn').style.display = 'none';
+            document.getElementById('infoModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').classList.add('hidden');
+        }
+
+        function simulatedDownload() {
+            alert('Đang tải tài liệu về máy của bạn...');
+            closeModal();
+        }
+
+        // Search & Filter Logic
+        function filterContent() {
+            const query = document.getElementById('searchResourcesInput').value.toLowerCase().trim();
+            
+            // Filter lectures
+            document.querySelectorAll('.lecture-card').forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query) || keywords.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Filter assignments
+            document.querySelectorAll('.assignment-card').forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query) || keywords.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function clearSearch() {
+            document.getElementById('searchResourcesInput').value = '';
+            filterContent();
+        }
+    </script>
 </body>
 </html>
