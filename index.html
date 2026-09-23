@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta name="google-site-verification" content="A_8vESnV7a1L0OzH9Hfm9txtKwms-etrwErXA5_ZB-E" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO CLASSROOM - KHÁNH HÀ</title>
+    <meta name="google-site-verification" content="A_8vESnV7a1L0OzH9Hfm9txtKwms-etrwErXA5_ZB-E" />
+
+    <!-- SEO Meta Tags -->
+    <title>Seo classroom-Khánh Hà | Trang Thông Tin Cho Sinh Viên</title>
+    <meta name="description" content="Truy cập Seo classroom-Khánh Hà để cập nhật thông báo môn học, lịch trình giảng dạy, tài liệu bài giảng và hướng dẫn chi tiết bài tập lớn cho sinh viên.">
+    <meta name="keywords" content="Seo classroom-Khánh Hà, seo classroom khánh hà, giảng viên khánh hà, bài giảng seo, tài liệu seo, đồ án seo">
+    <meta name="author" content="Thầy Khánh Hà">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khanhha.edu.vn/">
+    <meta property="og:title" content="Seo classroom-Khánh Hà | Trang Thông Tin Cho Sinh Viên">
+    <meta property="og:description" content="Cổng thông tin môn học SEO & Digital Marketing. Cập nhật bài giảng, bài tập thực hành, hướng dẫn đồ án và thông báo mới nhất.">
+    <meta property="og:image" content="https://khanhha.edu.vn/assets/images/seo-classroom-og.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Seo classroom-Khánh Hà | Trang Thông Tin Cho Sinh Viên">
+    <meta name="twitter:description" content="Cổng thông tin môn học SEO & Digital Marketing. Cập nhật bài giảng, bài tập thực hành, hướng dẫn đồ án.">
+
+    <!-- JSON-LD Structured Data for Educational Site -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Môn Học SEO & Digital Marketing - Seo classroom-Khánh Hà",
+      "description": "Hệ thống tài nguyên, bài giảng slide, hướng dẫn bài tập thực hành On-Page, Off-Page và Technical SEO dành cho sinh viên.",
+      "provider": {
+        "@type": "Person",
+        "name": "Thầy Khánh Hà",
+        "jobTitle": "Giảng viên SEO & Digital Marketing"
+      }
+    }
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -28,7 +62,8 @@
                             red: '#E11D48',
                             redHover: '#BE123C',
                             blue: '#3B82F6',
-                            gold: '#F59E0B'
+                            gold: '#F59E0B',
+                            green: '#10B981'
                         }
                     },
                     fontFamily: {
@@ -78,11 +113,12 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-red selection:text-white">
 
+    <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-40 w-full glass-panel border-b border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             
             <!-- Logo Brand -->
-            <a href="#" class="flex items-center gap-3 group shrink-0">
+            <a href="index.html" class="flex items-center gap-3 group shrink-0" title="Seo classroom-Khánh Hà Trang Chủ">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-red to-red-800 flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
@@ -96,21 +132,21 @@
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
-                <a href="index.html" class="text-white hover:text-brand-red transition flex items-center gap-1.5">
+                <a href="#trang-chu" class="text-white hover:text-brand-red transition flex items-center gap-1.5">
                     <i class="fa-solid fa-house text-xs text-brand-red"></i> Trang Chủ
                 </a>
-                <a href="bai-giang.html" class="hover:text-brand-red transition flex items-center gap-1.5">
+                <a href="#bai-giang" class="hover:text-brand-red transition flex items-center gap-1.5">
                     <i class="fa-solid fa-book-open text-xs text-gray-400"></i> Bài Giảng
                 </a>
-                <a href="thuc-hanh.html" class="hover:text-brand-red transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-laptop-code text-xs text-gray-400"></i> Thực Hành
+                <a href="#thuc-hanh" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-laptop-code text-xs text-gray-400"></i> Thực Hành &amp; Đồ Án
                 </a>
                 <a href="#thong-bao" class="hover:text-brand-red transition flex items-center gap-1.5">
                     <i class="fa-solid fa-bullhorn text-xs text-gray-400"></i> Thông Báo
                 </a>
             </nav>
 
-            <!-- Action Button - Link to Games Zone -->
+            <!-- Action Button -->
             <div class="flex items-center gap-3">
                 <a href="game.html" class="flex items-center gap-2 bg-gradient-to-r from-brand-red to-red-600 hover:from-red-600 hover:to-brand-red text-white text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-xl shadow-lg glow-red-sm transition transform active:scale-95">
                     <i class="fa-solid fa-gamepad text-base"></i>
@@ -120,42 +156,66 @@
         </div>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full space-y-8" id="trang-chu">
 
-        <!-- HERO BANNER CARD -->
+        <!-- HERO BANNER SECTION -->
         <section class="glass-panel rounded-2xl p-6 sm:p-8 border-l-4 border-l-brand-red relative overflow-hidden">
             <div class="absolute -right-10 -bottom-10 opacity-10 text-brand-red text-9xl pointer-events-none">
                 <i class="fa-solid fa-chart-line"></i>
             </div>
-            <div class="relative z-10 max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-bold mb-3">
-                    <i class="fa-solid fa-fire text-brand-red"></i> Kì Học 2026 - Môn SEO & Digital Marketing
-                </div>
-                <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
-                    Hệ Thống Bài Giảng & Tài Nguyên Môn SEO
-                </h1>
-                <p class="mt-2 text-sm text-gray-300 leading-relaxed">
-                    Cập nhật đầy đủ slide bài giảng, bài tập thực hành On-Page, Off-Page, Technical SEO và các công cụ hỗ trợ phân tích từ khóa dành riêng cho sinh viên Thầy Khánh Hà.
-                </p>
-                
-                <!-- Quick Search & Filter Bar -->
-                <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                    <div class="relative flex-1">
-                        <input type="text" id="searchResourcesInput" onkeyup="filterContent()" placeholder="Tìm kiếm tên bài giảng, tài liệu, bài tập..." 
-                            class="w-full bg-dark-base text-sm text-white placeholder-gray-400 pl-10 pr-4 py-3 rounded-xl border border-dark-border focus:outline-none focus:border-brand-red">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+            
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div class="lg:col-span-8 space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-bold">
+                        <i class="fa-solid fa-fire text-brand-red"></i> Cổng Học Tập Chính Thức • Học Kỳ 2026
                     </div>
-                    <button onclick="clearSearch()" class="px-5 py-3 bg-dark-card hover:bg-dark-hover border border-dark-border text-xs font-bold text-gray-300 rounded-xl transition shrink-0">
-                        Làm mới
-                    </button>
+                    <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+                        Seo classroom-Khánh Hà
+                    </h1>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Hệ thống tra cứu bài giảng, slide lý thuyết, bài tập thực hành On-Page, Technical SEO và quy định nộp đồ án môn học dành riêng cho sinh viên Thầy Khánh Hà.
+                    </p>
+
+                    <!-- Search Bar -->
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-1">
+                            <input type="text" id="searchResourcesInput" onkeyup="filterContent()" placeholder="Tìm tên bài giảng, từ khóa, bài tập, đồ án..." 
+                                class="w-full bg-dark-base text-sm text-white placeholder-gray-400 pl-10 pr-4 py-3 rounded-xl border border-dark-border focus:outline-none focus:border-brand-red">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                        </div>
+                        <button onclick="clearSearch()" class="px-5 py-3 bg-dark-card hover:bg-dark-hover border border-dark-border text-xs font-bold text-gray-300 rounded-xl transition shrink-0">
+                            Làm mới
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course Quick Stats -->
+                <div class="lg:col-span-4 grid grid-cols-2 gap-3 pt-2 lg:pt-0">
+                    <div class="p-3.5 rounded-xl bg-dark-card/80 border border-dark-border text-center">
+                        <span class="block font-black text-2xl text-brand-red">07</span>
+                        <span class="text-[11px] text-gray-400 font-medium">Chương Bài Giảng</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-dark-card/80 border border-dark-border text-center">
+                        <span class="block font-black text-2xl text-brand-blue">100%</span>
+                        <span class="text-[11px] text-gray-400 font-medium">Thực Hành Thực Tế</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-dark-card/80 border border-dark-border text-center">
+                        <span class="block font-black text-2xl text-brand-gold">01</span>
+                        <span class="text-[11px] text-gray-400 font-medium">Đồ Án Cuối Kỳ</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-dark-card/80 border border-dark-border text-center">
+                        <span class="block font-black text-2xl text-brand-green">0</span>
+                        <span class="text-[11px] text-gray-400 font-medium">Buổi Thuyết Trình</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- GRID LAYOUT: MAIN CONTENT (LEFT) + SIDEBAR (RIGHT) -->
+        <!-- MAIN GRID: LEFT CONTENT + RIGHT SIDEBAR -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <!-- MAIN CONTENT AREA (2 COLUMNS) -->
+            <!-- LEFT CONTENT AREA -->
             <div class="lg:col-span-2 space-y-8">
 
                 <!-- SECTION 1: SLIDE BÀI GIẢNG -->
@@ -163,21 +223,21 @@
                     <div class="flex items-center justify-between border-b border-dark-border pb-3">
                         <h2 class="text-lg font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
                             <span class="w-2 h-6 bg-brand-red rounded-full"></span>
-                            SLIDE BÀI GIẢNG MỚI NHẤT
+                            SLIDE BÀI GIẢNG &amp; TÀI LIỆU
                         </h2>
-                        <span class="text-xs text-gray-400">HK2 - 2026</span>
+                        <span class="text-xs text-gray-400 font-medium">Học kỳ 2026</span>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="lecturesGrid">
 
-                        <!-- Lecture Item 1 -->
-                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 1 tổng quan seo crawling indexing">
+                        <!-- Lecture 1 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 1 tổng quan seo crawling indexing ranking google bot">
                             <div>
                                 <div class="flex items-center justify-between mb-3">
                                     <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 1</span>
                                     <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 4.2 MB</span>
                                 </div>
-                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 1: Tổng Quan Về SEO', 'Slide tổng quan kiến thức SEO, cơ chế hoạt động của Google Bot, Crawling, Indexing & Ranking.', 'https://example.com/slide1.pdf')">
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 1: Tổng Quan Về SEO', 'Slide tổng quan kiến thức SEO, cơ chế hoạt động của Google Bot, Crawling, Indexing & Ranking.', 'Slide_Chuong_1_Tong_Quan_SEO.pdf')">
                                     Tổng Quan Về SEO
                                 </h3>
                                 <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
@@ -189,8 +249,8 @@
                             </button>
                         </div>
 
-                        <!-- Lecture Item 2 -->
-                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 2 nghiên cứu từ khóa search intent keyword planner">
+                        <!-- Lecture 2 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 2 nghiên cứu từ khóa search intent keyword planner ahrefs">
                             <div>
                                 <div class="flex items-center justify-between mb-3">
                                     <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 2</span>
@@ -200,7 +260,7 @@
                                     Nghiên Cứu Từ Khóa
                                 </h3>
                                 <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
-                                    Xác định Ý định tìm kiếm (Search Intent), sử dụng Google Keyword Planner & Ahrefs.
+                                    Xác định Ý định tìm kiếm (Search Intent), sử dụng Google Keyword Planner, Semrush &amp; Ahrefs.
                                 </p>
                             </div>
                             <button onclick="openDocModal('Chương 2: Nghiên Cứu Từ Khóa', 'Xác định Search Intent, sử dụng Google Keyword Planner.', 'Slide_Chuong_2_Nghien_Cuu_Tu_Khoa.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
@@ -208,15 +268,15 @@
                             </button>
                         </div>
 
-                        <!-- Lecture Item 3 -->
-                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 3 tối ưu on-page title meta description headings">
+                        <!-- Lecture 3 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 3 tối ưu on-page title meta description headings h1 h6 alt image">
                             <div>
                                 <div class="flex items-center justify-between mb-3">
                                     <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 3</span>
                                     <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 6.1 MB</span>
                                 </div>
                                 <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 3: Tối Ưu On-Page', 'Kỹ thuật tối ưu Title, Meta Description, Heading H1-H6 và thẻ Image Alt.', 'Slide_Chuong_3_OnPage.pdf')">
-                                    Tối Ưu On-Page
+                                    Tối Ưu On-Page SEO
                                 </h3>
                                 <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
                                     Chuẩn hóa thẻ Title, Meta Description, Headings, Alt Image và cấu trúc liên kết nội bộ (Internal Link).
@@ -227,8 +287,8 @@
                             </button>
                         </div>
 
-                        <!-- Lecture Item 4 -->
-                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 4 technical seo sitemap robots txt speed">
+                        <!-- Lecture 4 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 4 technical seo sitemap robots txt speed pagespeed schema">
                             <div>
                                 <div class="flex items-center justify-between mb-3">
                                     <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 4</span>
@@ -246,69 +306,107 @@
                             </button>
                         </div>
 
+                        <!-- Lecture 5 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 5 off-page seo backlink entity guest post social entity">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 5</span>
+                                    <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 4.8 MB</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 5: Off-Page SEO & Entity', 'Xây dựng liên kết chất lượng, định danh thương hiệu Entity và Guest Post.', 'Slide_Chuong_5_OffPage_Entity.pdf')">
+                                    Off-Page &amp; Entity
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                    Chiến lược Backlink an toàn, phủ sóng Social Entity, Guest Post và xây dựng uy tín website trên Google.
+                                </p>
+                            </div>
+                            <button onclick="openDocModal('Chương 5: Off-Page SEO & Entity', 'Chiến lược Backlink, Entity và Guest Post.', 'Slide_Chuong_5_OffPage_Entity.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-brand-red"></i> Tải Bài Giảng
+                            </button>
+                        </div>
+
+                        <!-- Lecture 6 -->
+                        <div class="lecture-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between" data-keywords="chương 6 content marketing ai chatgpt copywriting viiet bai chuẩn seo">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-brand-red text-white text-[11px] font-extrabold px-2.5 py-1 rounded-md">Chương 6</span>
+                                    <span class="text-[11px] text-gray-400"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF • 5.1 MB</span>
+                                </div>
+                                <h3 class="font-extrabold text-base text-white hover:text-brand-red transition cursor-pointer" onclick="openDocModal('Chương 6: Content SEO & AI Tool', 'Ứng dụng AI chuẩn bị nội dung, viết bài chuẩn SEO và chuẩn hóa E-E-A-T.', 'Slide_Chuong_6_Content_AI.pdf')">
+                                    Content SEO &amp; AI Tools
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">
+                                    Ứng dụng ChatGPT/AI trong sáng tạo nội dung, quy tắc E-E-A-T của Google và tối ưu chuyển đổi.
+                                </p>
+                            </div>
+                            <button onclick="openDocModal('Chương 6: Content SEO & AI Tool', 'Ứng dụng AI sáng tạo nội dung chuẩn SEO.', 'Slide_Chuong_6_Content_AI.pdf')" class="mt-4 w-full py-2.5 bg-dark-card hover:bg-brand-red/20 border border-dark-border hover:border-brand-red/50 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-download text-brand-red"></i> Tải Bài Giảng
+                            </button>
+                        </div>
+
                     </div>
                 </section>
 
-                <!-- SECTION 2: THỰC HÀNH & BÀI TẬP LỚN -->
+                <!-- SECTION 2: THỰC HÀNH & ĐỒ ÁN MÔN HỌC -->
                 <section id="thuc-hanh" class="space-y-4">
                     <div class="flex items-center justify-between border-b border-dark-border pb-3">
                         <h2 class="text-lg font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
                             <span class="w-2 h-6 bg-brand-blue rounded-full"></span>
-                            THỰC HÀNH & BÀI TẬP LỚN
+                            THỰC HÀNH &amp; ĐỒ ÁN CUỐI KỲ
                         </h2>
-                        <span class="text-xs text-gray-400">Yêu cầu bắt buộc</span>
+                        <span class="text-xs text-gray-400 font-medium">Bắt buộc hoàn thành</span>
                     </div>
 
                     <div class="space-y-4" id="assignmentsList">
 
-                        <!-- Assignment Item 1 -->
-                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="bài tập 1 tối ưu thẻ meta description title">
+                        <!-- Assignment 1 -->
+                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="bài tập 1 tối ưu thẻ meta description title yoast seo snippet">
                             <div class="space-y-1.5 flex-1">
                                 <div class="flex items-center gap-2">
                                     <span class="bg-brand-blue text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md">Bài Tập 1</span>
                                     <span class="text-xs text-brand-gold font-semibold"><i class="fa-regular fa-calendar-check"></i> Hạn nộp: 23:59 - Thứ 7 tuần này</span>
                                 </div>
-                                <h3 class="font-bold text-base text-white">Thực Hành Tối Ưu Thẻ Meta & Cấu Trúc Content</h3>
+                                <h3 class="font-bold text-base text-white">Thực Hành Tối Ưu Thẻ Meta &amp; Snippet</h3>
                                 <p class="text-xs text-gray-400">
-                                    Thực hành sửa thẻ Title/Description trên mã nguồn mẫu và kiểm tra chuẩn hóa đoạn snippet bằng Yoast SEO.
+                                    Sửa thẻ Title/Description trên mã nguồn mẫu và kiểm tra độ dài đoạn hiển thị Google Snippet.
                                 </p>
                             </div>
-                            <button onclick="openAssignmentModal('Bài Tập 1: Tối Ưu Thẻ Meta', 'Sinh viên thực hiện tối ưu theo bộ từ khóa đã phân công. Nộp file Word báo cáo hình ảnh trước và sau khi tối ưu.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-blue/20 border border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs rounded-xl transition shrink-0">
-                                Chi Tiết & Yêu Cầu
+                            <button onclick="openAssignmentModal('Bài Tập 1: Tối Ưu Thẻ Meta', 'Sinh viên thực hiện tối ưu theo bộ từ khóa được giao. Nộp file Word báo cáo chứa ảnh chụp màn hình mã nguồn trước & sau khi chỉnh sửa.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-blue/20 border border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs rounded-xl transition shrink-0">
+                                Chi Tiết &amp; Yêu Cầu
                             </button>
                         </div>
 
-                        <!-- Assignment Item 2 -->
-                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="bài tập 2 search console google analytics báo cáo">
+                        <!-- Assignment 2 -->
+                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="bài tập 2 google search console ga4 analytics sitemap">
                             <div class="space-y-1.5 flex-1">
                                 <div class="flex items-center gap-2">
                                     <span class="bg-brand-blue text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md">Bài Tập 2</span>
-                                    <span class="text-xs text-brand-gold font-semibold"><i class="fa-regular fa-calendar-check"></i> Hạn nộp: 23:59 - Tuần tới</span>
+                                    <span class="text-xs text-brand-gold font-semibold"><i class="fa-regular fa-calendar-check"></i> Hạn nộp: 23:59 - Tuần sau</span>
                                 </div>
-                                <h3 class="font-bold text-base text-white">Cấu Hình Google Search Console & GA4</h3>
+                                <h3 class="font-bold text-base text-white">Cấu Hình Google Search Console &amp; GA4</h3>
                                 <p class="text-xs text-gray-400">
-                                    Khai báo website cá nhân/nhóm vào Search Console, tạo sitemap và lập chỉ mục thử nghiệm.
+                                    Khai báo website vào Search Console, gửi Sitemap XML và kiểm tra tốc độ indexing thực tế.
                                 </p>
                             </div>
-                            <button onclick="openAssignmentModal('Bài Tập 2: Khai báo Search Console', 'Cung cấp quyền Reader cho email giangvien.khanhha@gmail.com và chụp ảnh xác minh tên miền thành công.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-blue/20 border border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs rounded-xl transition shrink-0">
-                                Chi Tiết & Yêu Cầu
+                            <button onclick="openAssignmentModal('Bài Tập 2: Khai Báo Search Console', 'Cấp quyền truy cập Reader cho email giảng viên và gửi kèm minh họa cấu hình Sitemap thành công.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-blue/20 border border-brand-blue/50 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs rounded-xl transition shrink-0">
+                                Chi Tiết &amp; Yêu Cầu
                             </button>
                         </div>
 
-                        <!-- Assignment Item 3 - Major Project -->
-                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-brand-red/40 bg-gradient-to-r from-dark-card to-red-950/20 card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="đồ án môn học website seo Audit onpage offpage">
+                        <!-- Major Project -->
+                        <div class="assignment-card glass-panel p-5 rounded-2xl border border-brand-red/40 bg-gradient-to-r from-dark-card to-red-950/20 card-hover-effect flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-keywords="đồ án môn học website seo audit onpage offpage organic traffic 50% điểm">
                             <div class="space-y-1.5 flex-1">
                                 <div class="flex items-center gap-2">
                                     <span class="bg-brand-red text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md">Đồ Án Cuối Kỳ</span>
                                     <span class="text-xs text-red-400 font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Chiếm 50% tổng điểm</span>
                                 </div>
-                                <h3 class="font-extrabold text-base text-white">Xây Dựng & Audit SEO Cho Website Doanh Nghiệp</h3>
+                                <h3 class="font-extrabold text-base text-white">Xây Dựng &amp; Audit SEO Cho Website</h3>
                                 <p class="text-xs text-gray-300">
-                                    Thực hiện theo nhóm (4-5 SV): Lập ma trận từ khóa, xây dựng nội dung chuẩn SEO, Audit Technical và lập báo cáo Traffic.
+                                    Làm việc theo nhóm (4-5 SV): Lập ma trận từ khóa, xây dựng nội dung chuẩn SEO, Audit Technical và lập báo cáo Organic Traffic.
                                 </p>
                             </div>
-                            <button onclick="openAssignmentModal('ĐỒ ÁN CUỐI KỲ: AUDIT & SEO WEBSITE', 'Yêu cầu: Nộp 01 bản in báo cáo (đóng bìa kiếng) + 01 file Word qua hệ thống. Sinh viên KHÔNG cần thuyết trình, giảng viên chấm trực tiếp dựa trên chỉ số Index và Organic Traffic thực tế.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl shadow-lg transition shrink-0">
-                                Xem Quy Định Đồ Án
+                            <button onclick="openAssignmentModal('ĐỒ ÁN CUỐI KỲ: AUDIT & SEO WEBSITE', 'Yêu cầu quy chuẩn: Nộp 01 bản in báo cáo (đóng bìa kiếng) + 01 file Word qua hệ thống. KHÔNG thuyết trình, giảng viên chấm điểm trực tiếp dựa trên dữ liệu Index & Organic Traffic thực tế.')" class="w-full md:w-auto px-5 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs rounded-xl shadow-lg transition shrink-0">
+                                Quy Định Đồ Án
                             </button>
                         </div>
 
@@ -317,79 +415,61 @@
 
             </div>
 
-            <!-- RIGHT SIDEBAR (1 COLUMN) -->
+            <!-- RIGHT SIDEBAR -->
             <div class="space-y-6" id="thong-bao">
 
-                <!-- SIDEBAR CARD 1: BẢNG TIN HOT / THÔNG BÁO -->
+                <!-- NOTICE CARD -->
                 <div class="glass-panel rounded-2xl p-5 border border-dark-border">
                     <div class="flex items-center gap-2 pb-3 mb-4 border-b border-dark-border">
                         <i class="fa-solid fa-fire text-brand-red text-lg"></i>
-                        <h3 class="font-extrabold text-base text-white tracking-wide uppercase">BẢNG TIN HOT</h3>
+                        <h3 class="font-extrabold text-base text-white tracking-wide uppercase">THÔNG BÁO MỚI</h3>
                     </div>
 
                     <div class="space-y-4">
-                        <!-- Notice item 1 -->
-                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Lịch Thi Giữa Kỳ Môn SEO', 'Thi trắc nghiệm kết hợp thực hành trên máy tính vào Ca 2 ngày 15/10/2026 tại Phòng Lab 402.')">
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Lịch Thi Giữa Kỳ Môn SEO', 'Thi trắc nghiệm kết hợp thực hành trên máy tính tại Phòng Lab. Thời gian làm bài: 60 phút.')">
                             <span class="font-extrabold text-lg text-brand-red shrink-0 w-4">1</span>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
-                                    Lịch thi Giữa kỳ môn SEO
-                                </h4>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">Lịch thi Giữa kỳ môn SEO</h4>
                                 <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: 2 ngày trước</p>
                             </div>
                         </div>
 
-                        <!-- Notice item 2 -->
-                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Hướng dẫn tạo web trên GitHub Pages', 'Tất cả các nhóm tiến hành tạo Repository theo cú pháp: [TênNhóm]-SEO-2026.')">
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Hướng dẫn tạo Web trên GitHub Pages', 'Các nhóm tạo Repository theo đúng cú pháp: [TenNhom]-SEO-2026 và nộp link công khai.')">
                             <span class="font-extrabold text-lg text-brand-gold shrink-0 w-4">2</span>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
-                                    Hướng dẫn tạo web trên GitHub
-                                </h4>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">Hướng dẫn tạo web GitHub Pages</h4>
                                 <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: 5 ngày trước</p>
                             </div>
                         </div>
 
-                        <!-- Notice item 3 -->
-                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Danh sách Nhóm Đồ Án Cuối Kỳ', 'Trưởng nhóm kiểm tra danh sách thành viên và đề tài website đã đăng ký.')">
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Danh Sách Nhóm Đồ Án', 'Trưởng nhóm kiểm tra danh sách thành viên và tên miền dự án đã đăng ký.')">
                             <span class="font-extrabold text-lg text-brand-blue shrink-0 w-4">3</span>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
-                                    Danh sách Nhóm Đồ Án
-                                </h4>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">Danh sách Nhóm Đồ Án Cuối Kỳ</h4>
                                 <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: Tuần trước</p>
                             </div>
                         </div>
 
-                        <!-- Notice item 4 -->
-                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Tiêu chí đánh giá On-Page chuẩn', 'Đánh giá dựa trên độ dài bài viết (>1200 từ), vị trí keyword, mật độ từ khóa 2-3% và chỉ số On-Page Score.')">
+                        <div class="flex gap-3 group cursor-pointer" onclick="openNoticeModal('Tiêu chí chấm bài viết On-Page', 'Bài viết tối thiểu 1.200 từ, mật độ từ khóa 2-3%, đầy đủ thẻ Title, Meta Description và hình ảnh Alt.')">
                             <span class="font-extrabold text-lg text-gray-500 shrink-0 w-4">4</span>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">
-                                    Tiêu chí đánh giá On-Page
-                                </h4>
+                                <h4 class="text-xs font-bold text-gray-200 group-hover:text-brand-red transition">Tiêu chí chấm On-Page Content</h4>
                                 <p class="text-[11px] text-gray-500 mt-0.5">Cập nhật: 2 tuần trước</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SIDEBAR CARD 2: QUY ĐỊNH NỘP BÀI -->
+                <!-- RULES & GUIDELINES -->
                 <div class="glass-panel rounded-2xl p-5 border border-dark-border bg-dark-card/50">
                     <div class="flex items-center gap-2 pb-3 mb-3 border-b border-dark-border">
                         <i class="fa-solid fa-circle-exclamation text-brand-gold text-lg"></i>
-                        <h3 class="font-extrabold text-sm text-white uppercase tracking-wide">QUY ĐỊNH & LƯU Ý</h3>
+                        <h3 class="font-extrabold text-sm text-white uppercase tracking-wide">QUY ĐỊNH NỘP BÀI</h3>
                     </div>
                     <ul class="text-xs text-gray-300 space-y-2.5 list-disc list-inside leading-relaxed">
-                        <li>
-                            <strong class="text-white">Hình thức nộp:</strong> File Word online + Bản in đóng bìa kiếng.
-                        </li>
-                        <li>
-                            <strong class="text-white">Thuyết trình:</strong> <span class="text-red-400 font-bold">KHÔNG thuyết trình</span>, chấm trực tiếp trên sản phẩm.
-                        </li>
-                        <li>
-                            <strong class="text-white">Tiêu chuẩn:</strong> Báo cáo đầy đủ hình ảnh minh họa, từ khóa lên TOP và lượng truy cập thực tế.
-                        </li>
+                        <li><strong class="text-white">Hình thức:</strong> Nộp file Word qua hệ thống + 01 bản in đóng bìa kiếng.</li>
+                        <li><strong class="text-white">Thuyết trình:</strong> <span class="text-red-400 font-bold">KHÔNG thuyết trình</span>, chấm trực tiếp trên kết quả SEO thực tế.</li>
+                        <li><strong class="text-white">Minh chứng:</strong> Hình ảnh chụp mã nguồn, chỉ số Index và báo cáo Traffic.</li>
                     </ul>
                 </div>
 
@@ -409,12 +489,12 @@
                 <span class="font-extrabold text-sm text-white">SEO CLASSROOM • THẦY KHÁNH HÀ</span>
             </div>
             <p class="text-xs text-gray-500 text-center md:text-right">
-                © 2026 Portal Học Tập & Giảng Dạy Môn SEO. Giao diện đồng nhất hệ thống Khu Vui Chơi.
+                © 2026 Portal Học Tập &amp; Giảng Dạy Môn SEO. Trang tin tức chính thức [Seo classroom-Khánh Hà].
             </p>
         </div>
     </footer>
 
-    <!-- GENERIC MODAL FOR DOWNLOADS / ASSIGNMENT / NOTICES -->
+    <!-- MODAL DIALOG -->
     <div id="infoModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-dark-card border border-dark-border w-full max-w-lg rounded-2xl p-6 relative shadow-2xl space-y-4">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
@@ -431,7 +511,7 @@
             </div>
             
             <div class="p-4 bg-dark-base rounded-xl border border-dark-border text-xs text-gray-300 leading-relaxed" id="modalBody">
-                Nội dung chi tiết sẽ hiển thị ở đây...
+                Nội dung chi tiết...
             </div>
 
             <div class="flex justify-end gap-3 pt-2">
@@ -445,9 +525,8 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT -->
     <script>
-        // Modal functions
         function openDocModal(title, description, fileName) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalSubtitle').innerText = "Tài liệu học tập • Slide chính thức";
@@ -469,7 +548,7 @@
                     <p class="text-white font-bold">📋 Yêu cầu chi tiết:</p>
                     <p>${details}</p>
                     <div class="p-3 bg-red-950/30 border border-brand-red/30 rounded-lg text-red-300 text-[11px] mt-2">
-                        ⚠️ <strong>Lưu ý:</strong> Nộp đúng hạn qua hệ thống. Mọi trường hợp trễ hạn sẽ bị trừ 10% điểm/ngày.
+                        ⚠️ <strong>Lưu ý:</strong> Nộp đúng hạn qua hệ thống. Mọi trường hợp trễ hạn sẽ bị trừ điểm theo quy định.
                     </div>
                 </div>
             `;
@@ -494,23 +573,10 @@
             closeModal();
         }
 
-        // Search & Filter Logic
         function filterContent() {
             const query = document.getElementById('searchResourcesInput').value.toLowerCase().trim();
             
-            // Filter lectures
-            document.querySelectorAll('.lecture-card').forEach(card => {
-                const keywords = card.getAttribute('data-keywords') || '';
-                const text = card.innerText.toLowerCase();
-                if (text.includes(query) || keywords.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Filter assignments
-            document.querySelectorAll('.assignment-card').forEach(card => {
+            document.querySelectorAll('.lecture-card, .assignment-card').forEach(card => {
                 const keywords = card.getAttribute('data-keywords') || '';
                 const text = card.innerText.toLowerCase();
                 if (text.includes(query) || keywords.includes(query)) {
