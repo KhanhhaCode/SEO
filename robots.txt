@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khanhhacode.github.io/SEO/sitemap.xml
