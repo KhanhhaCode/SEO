@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THỰC HÀNH SEO - SEO CLASSROOM (KHÁNH HÀ)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            base: '#0B0F17',
+                            card: '#151C2C',
+                            border: '#2A3447',
+                            hover: '#1E293B'
+                        },
+                        brand: {
+                            red: '#E11D48',
+                            redHover: '#BE123C',
+                            blue: '#3B82F6',
+                            gold: '#F59E0B',
+                            green: '#10B981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(21, 28, 44, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-red-sm {
+            box-shadow: 0 0 15px rgba(225, 29, 72, 0.3);
+        }
+        .glow-blue-sm {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+        .card-hover-effect {
+            transition: all 0.25s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5), 0 0 12px rgba(59, 130, 246, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A3447;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3B82F6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Logo Brand -->
+            <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-red to-red-800 flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-wide text-white group-hover:text-brand-red transition-colors">
+                        SEO <span class="text-brand-red">CLASSROOM</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-medium -mt-1 tracking-wider uppercase">Khánh Hà Portal</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+                <a href="index.html" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-gray-400"></i> Trang Chủ
+                </a>
+                <a href="bai-giang.html" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open text-xs text-gray-400"></i> Bài Giảng
+                </a>
+                <a href="thuc-hanh.html" class="text-white hover:text-brand-blue transition flex items-center gap-1.5 border-b-2 border-brand-blue py-4">
+                    <i class="fa-solid fa-laptop-code text-xs text-brand-blue"></i> Thực Hành
+                </a>
+                <a href="index.html#thong-bao" class="hover:text-brand-red transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullhorn text-xs text-gray-400"></i> Thông Báo
+                </a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="flex items-center gap-3">
+                <a href="game.html" class="flex items-center gap-2 bg-gradient-to-r from-brand-red to-red-600 hover:from-red-600 hover:to-brand-red text-white text-xs sm:text-sm font-extrabold px-4 py-2.5 rounded-xl shadow-lg glow-red-sm transition transform active:scale-95">
+                    <i class="fa-solid fa-gamepad text-base"></i>
+                    <span>Khu vui chơi</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full space-y-8">
+
+        <!-- HERO BANNER SECTION -->
+        <section class="glass-panel rounded-2xl p-6 sm:p-8 border-l-4 border-l-brand-blue relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-brand-blue text-9xl pointer-events-none">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/30 text-brand-blue text-xs font-bold mb-3">
+                    <i class="fa-solid fa-flask text-brand-blue"></i> Lab & Project SEO 2026
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                    Trung Tâm Thực Hành & Đồ Án SEO
+                </h1>
+                <p class="mt-2 text-sm text-gray-300 leading-relaxed">
+                    Tổng hợp các bài lab thực hành On-Page, Technical SEO, hướng dẫn cấu hình Search Console/GA4 và Đồ án cuối kỳ. Tích hợp bộ công cụ thử nghiệm thẻ Snippet nhanh ngay tại lớp.
+                </p>
+                
+                <!-- Filter Tabs -->
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <button onclick="filterCategory('all')" class="tab-btn active px-4 py-2 bg-brand-blue text-white text-xs font-bold rounded-xl shadow transition">
+                        Tất Cả Bài Tập
+                    </button>
+                    <button onclick="filterCategory('lab')" class="tab-btn px-4 py-2 bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-300 text-xs font-bold rounded-xl transition">
+                        <i class="fa-solid fa-laptop-code text-brand-blue mr-1"></i> Bài Lab Tuần
+                    </button>
+                    <button onclick="filterCategory('tool')" class="tab-btn px-4 py-2 bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-300 text-xs font-bold rounded-xl transition">
+                        <i class="fa-solid fa-wrench text-brand-gold mr-1"></i> Công Cụ Hỗ Trợ
+                    </button>
+                    <button onclick="filterCategory('project')" class="tab-btn px-4 py-2 bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-300 text-xs font-bold rounded-xl transition">
+                        <i class="fa-solid fa-crown text-brand-red mr-1"></i> Đồ Án Cuối Kỳ
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE QUICK TOOL: TITLE & META PREVIEWER -->
+        <section class="glass-panel rounded-2xl p-6 border border-dark-border space-y-4">
+            <div class="flex items-center justify-between border-b border-dark-border pb-3">
+                <h2 class="text-base font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-vial-circle-check text-brand-blue"></i>
+                    CÔNG CỤ THỰC HÀNH NHANH: CHECK SNIPPET ON-PAGE
+                </h2>
+                <span class="text-xs text-brand-green font-bold"><i class="fa-solid fa-bolt"></i> Live Simulator</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Input Form -->
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">Thẻ Title (Tiêu đề SEO):</label>
+                        <input type="text" id="simTitle" oninput="updateSnippet()" placeholder="Nhập tiêu đề chứa từ khóa chính..." 
+                            class="w-full bg-dark-base text-xs text-white p-3 rounded-xl border border-dark-border focus:outline-none focus:border-brand-blue">
+                        <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                            <span>Độ dài đề xuất: 50 - 60 ký tự</span>
+                            <span id="titleCount">0 / 60 ký tự</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">Thẻ Meta Description (Mô tả):</label>
+                        <textarea id="simDesc" oninput="updateSnippet()" rows="3" placeholder="Nhập đoạn mô tả ngắn hấp dẫn kích thích click..." 
+                            class="w-full bg-dark-base text-xs text-white p-3 rounded-xl border border-dark-border focus:outline-none focus:border-brand-blue"></textarea>
+                        <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                            <span>Độ dài đề xuất: 150 - 160 ký tự</span>
+                            <span id="descCount">0 / 160 ký tự</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Preview Result Box -->
+                <div class="bg-dark-base p-4 rounded-xl border border-dark-border flex flex-col justify-center space-y-2">
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-gray-400">Xem trước hiển thị trên Google Search:</span>
+                    <div class="p-4 bg-[#131924] rounded-lg border border-dark-border/50 font-sans space-y-1">
+                        <div class="flex items-center gap-2 text-xs text-gray-400">
+                            <span class="text-gray-300 font-medium">https://yourwebsite.com</span>
+                            <i class="fa-solid fa-ellipsis-vertical text-[10px]"></i>
+                        </div>
+                        <h3 id="prevTitle" class="text-sm font-semibold text-[#8ab4f8] hover:underline cursor-pointer truncate">
+                            Tiêu đề bài viết sẽ hiển thị ở đây
+                        </h3>
+                        <p id="prevDesc" class="text-xs text-[#bdc1c6] line-clamp-2 leading-relaxed">
+                            Đoạn thẻ mô tả Meta Description sẽ hiển thị đầy đủ tại đây giúp người tìm kiếm hình dung được nội dung bài viết...
+                        </p>
+                    </div>
+                    <div id="snippetStatus" class="text-[11px] text-brand-gold pt-1">
+                        💡 Mẹo: Đưa từ khóa chính lên ngay đầu thẻ Title để đạt điểm On-Page cao nhất.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN ASSIGNMENTS & LAB GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tasksContainer">
+
+            <!-- Item 1: Lab 1 -->
+            <div class="task-card lab glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-brand-blue/20 text-brand-blue border border-brand-blue/40 text-[10px] font-extrabold px-2.5 py-1 rounded-md">Lab 01</span>
+                        <span class="text-[11px] text-brand-gold font-bold"><i class="fa-regular fa-clock"></i> Hạn: Thứ 7 Tuần này</span>
+                    </div>
+                    <h3 class="font-extrabold text-base text-white">Nghiên Cứu Từ Khóa & Search Intent</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Sử dụng Google Keyword Planner, Ahrefs để lập ma trận từ khóa 3 tầng (Short-tail, Mid-tail, Long-tail) cho nhóm đề tài đã chọn.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-dark-border/60 flex items-center justify-between gap-2">
+                    <span class="text-[11px] text-gray-400"><i class="fa-solid fa-file-word text-blue-400"></i> Nộp File Word</span>
+                    <button onclick="openAssignmentDetails('Lab 01: Nghiên Cứu Từ Khóa', 'Nộp ma trận từ khóa xuất từ Excel kèm file Word phân tích 5 Search Intent chính của đối thủ cạnh tranh top 3.')" class="px-3.5 py-2 bg-brand-blue/20 hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs rounded-xl transition">
+                        Chi Tiết
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 2: Lab 2 -->
+            <div class="task-card lab glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-brand-blue/20 text-brand-blue border border-brand-blue/40 text-[10px] font-extrabold px-2.5 py-1 rounded-md">Lab 02</span>
+                        <span class="text-[11px] text-brand-gold font-bold"><i class="fa-regular fa-clock"></i> Hạn: Tuần tới</span>
+                    </div>
+                    <h3 class="font-extrabold text-base text-white">Tối Ưu Bài Viết Chuẩn On-Page</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Thực hành viết bài độ dài > 1200 từ, tối ưu mật độ từ khóa 2-3%, chuẩn hóa các thẻ Heading H1-H3, Image Alt và liên kết nội bộ.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-dark-border/60 flex items-center justify-between gap-2">
+                    <span class="text-[11px] text-gray-400"><i class="fa-solid fa-link text-green-400"></i> Nộp Link Web</span>
+                    <button onclick="openAssignmentDetails('Lab 02: Tối Ưu Bài Viết Chuẩn On-Page', 'Đăng bài viết trực tiếp lên website nhóm. Chụp ảnh điểm On-Page từ RankMath hoặc Yoast SEO đính kèm báo cáo Word.')" class="px-3.5 py-2 bg-brand-blue/20 hover:bg-brand-blue text-brand-blue hover:text-white font-bold text-xs rounded-xl transition">
+                        Chi Tiết
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 3: Tool Tutorial -->
+            <div class="task-card tool glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-brand-gold/20 text-brand-gold border border-brand-gold/40 text-[10px] font-extrabold px-2.5 py-1 rounded-md">Công Cụ</span>
+                        <span class="text-[11px] text-brand-green font-bold"><i class="fa-solid fa-check"></i> Miễn Phí</span>
+                    </div>
+                    <h3 class="font-extrabold text-base text-white">Cấu Hình Search Console & GA4</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Khai báo tên miền trên Google Search Console, submit Sitemap XML và tích hợp Google Analytics 4 để đo lường lượng truy cập.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-dark-border/60 flex items-center justify-between gap-2">
+                    <span class="text-[11px] text-gray-400"><i class="fa-solid fa-shield-halved text-yellow-400"></i> Xác minh DNS</span>
+                    <button onclick="openAssignmentDetails('Cấu Hình Google Search Console & GA4', 'Yêu cầu share quyền Viewer/Reader tài khoản Search Console tới email: giangvien.khanhha@gmail.com để phục vụ chấm điểm.')" class="px-3.5 py-2 bg-brand-gold/20 hover:bg-brand-gold text-brand-gold hover:text-black font-bold text-xs rounded-xl transition">
+                        Hướng Dẫn
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 4: Major Project -->
+            <div class="task-card project lg:col-span-2 glass-panel p-6 rounded-2xl border border-brand-red/50 bg-gradient-to-r from-dark-card via-dark-card to-red-950/20 card-hover-effect flex flex-col justify-between">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-brand-red text-white text-[10px] font-extrabold px-3 py-1 rounded-md shadow">ĐỒ ÁN TỔNG HỢP CUỐI KỲ</span>
+                        <span class="text-xs text-red-400 font-extrabold"><i class="fa-solid fa-star"></i> Bắt buộc (50% Điểm Môn)</span>
+                    </div>
+                    <h3 class="font-black text-lg text-white">Audit & Xây Dựng Chiến Lược SEO Website Doanh Nghiệp</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Thực hiện theo nhóm (4-5 sinh viên): Xây dựng website thực tế, triển khai tối ưu Technical SEO, On-Page, Off-Page, theo dõi chỉ số lập chỉ mục (Indexing) và thứ hạng từ khóa thực tế trên Google.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-dark-border/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div class="text-xs text-gray-400 space-y-1">
+                        <p><i class="fa-solid fa-file-contract text-brand-red mr-1"></i> <strong>Hình thức:</strong> 01 File Word + 01 Bản in đóng bìa kiếng.</p>
+                        <p><i class="fa-solid fa-ban text-red-400 mr-1"></i> <strong>Lưu ý:</strong> <span class="text-red-400 font-bold">KHÔNG THUYẾT TRÌNH</span>. Chấm điểm trực tiếp dựa trên hiệu quả thực tế.</p>
+                    </div>
+                    <button onclick="openAssignmentDetails('ĐỒ ÁN CUỐI KỲ: AUDIT & SEO WEBSITE', 'Yêu cầu bắt buộc:\n1. Nộp file báo cáo Word qua hệ thống đúng hạn.\n2. Nộp 01 bản in báo cáo (đóng bìa kiếng) trực tiếp cho giảng viên.\n3. Đính kèm bảng phân công nhiệm vụ và % đóng góp của từng thành viên.\n4. Giảng viên chấm điểm dựa trên chỉ số Index, Organic Keywords và Traffic thực tế.')" class="w-full sm:w-auto px-5 py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-extrabold text-xs rounded-xl shadow-lg transition shrink-0">
+                        Quy Định Chi Tiết
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 5: Checklist Checklist -->
+            <div class="task-card tool glass-panel p-5 rounded-2xl border border-dark-border card-hover-effect flex flex-col justify-between">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-brand-green/20 text-brand-green border border-brand-green/40 text-[10px] font-extrabold px-2.5 py-1 rounded-md">Checklist</span>
+                        <span class="text-[11px] text-gray-400">Self-Audit</span>
+                    </div>
+                    <h3 class="font-extrabold text-base text-white">Bảng Kiểm Tra Technical SEO</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Danh sách 15 tiêu chí Technical SEO bắt buộc phải kiểm tra trước khi bàn giao báo cáo đồ án cho giảng viên.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-dark-border/60 flex items-center justify-between gap-2">
+                    <span class="text-[11px] text-gray-400"><i class="fa-solid fa-list-check text-green-400"></i> 15 Tiêu chí</span>
+                    <button onclick="openChecklistModal()" class="px-3.5 py-2 bg-brand-green/20 hover:bg-brand-green text-brand-green hover:text-black font-bold text-xs rounded-xl transition">
+                        Xem Bảng
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 border-t border-dark-border bg-dark-card/60 backdrop-blur py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center text-white font-bold text-sm">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <span class="font-extrabold text-sm text-white">SEO CLASSROOM • PHẦN THỰC HÀNH & LAB</span>
+            </div>
+            <p class="text-xs text-gray-500 text-center md:text-right">
+                © 2026 Portal Học Tập & Giảng Dạy Môn SEO - Thầy Khánh Hà.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODAL CHI TIẾT BÀI TẬP -->
+    <div id="assignmentModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-dark-card border border-dark-border w-full max-w-lg rounded-2xl p-6 relative shadow-2xl space-y-4">
+            <button onclick="closeModal('assignmentModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-blue/20 text-brand-blue flex items-center justify-center font-bold text-xl shrink-0">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+                <div>
+                    <h3 id="modalAssignTitle" class="text-base font-extrabold text-white">Tên Bài Tập</h3>
+                    <p class="text-xs text-brand-blue font-semibold">Hướng dẫn & Yêu cầu nộp bài</p>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-dark-base rounded-xl border border-dark-border text-xs text-gray-300 leading-relaxed space-y-2" id="modalAssignBody">
+                Nội dung chi tiết...
+            </div>
+
+            <div class="p-3 bg-red-950/20 border border-brand-red/30 rounded-xl text-[11px] text-red-300">
+                <strong class="text-brand-red"><i class="fa-solid fa-triangle-exclamation"></i> Quy định chung:</strong> Bài nộp file Word phải bao gồm đầy đủ minh chứng bằng hình ảnh, không chép lại lý thuyết suông.
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <button onclick="closeModal('assignmentModal')" class="px-5 py-2.5 bg-dark-hover text-gray-300 text-xs font-bold rounded-xl border border-dark-border hover:bg-dark-border transition">
+                    Đã Hiểu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CHECKLIST TECHNICAL SEO -->
+    <div id="checklistModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-dark-card border border-dark-border w-full max-w-xl rounded-2xl p-6 relative shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('checklistModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="flex items-center gap-3 border-b border-dark-border pb-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-green/20 text-brand-green flex items-center justify-center font-bold text-xl shrink-0">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-extrabold text-white">CHECKLIST TECHNICAL SEO</h3>
+                    <p class="text-xs text-brand-green font-semibold">15 Hạng mục kiểm tra trước khi nộp đồ án</p>
+                </div>
+            </div>
+            
+            <div class="space-y-2 text-xs text-gray-300">
+                <label class="flex items-start gap-2.5 p-2.5 bg-dark-base rounded-lg border border-dark-border cursor-pointer hover:border-brand-green transition">
+                    <input type="checkbox" class="mt-0.5 rounded border-dark-border text-brand-green focus:ring-0">
+                    <span>1. File <code>robots.txt</code> đã cấu hình đúng và không chặn Bot crawl trang quan trọng.</span>
+                </label>
+                <label class="flex items-start gap-2.5 p-2.5 bg-dark-base rounded-lg border border-dark-border cursor-pointer hover:border-brand-green transition">
+                    <input type="checkbox" class="mt-0.5 rounded border-dark-border text-brand-green focus:ring-0">
+                    <span>2. Sơ đồ trang web <code>sitemap.xml</code> đã được khai báo thành công trên Google Search Console.</span>
+                </label>
+                <label class="flex items-start gap-2.5 p-2.5 bg-dark-base rounded-lg border border-dark-border cursor-pointer hover:border-brand-green transition">
+                    <input type="checkbox" class="mt-0.5 rounded border-dark-border text-brand-green focus:ring-0">
+                    <span>3. Website đã cài đặt chứng chỉ bảo mật SSL (HTTPS).</span>
+                </label>
+                <label class="flex items-start gap-2.5 p-2.5 bg-dark-base rounded-lg border border-dark-border cursor-pointer hover:border-brand-green transition">
+                    <input type="checkbox" class="mt-0.5 rounded border-dark-border text-brand-green focus:ring-0">
+                    <span>4. Điểm tốc độ tải trang Core Web Vitals đạt tối thiểu 70+ trên Mobile.</span>
+                </label>
+                <label class="flex items-start gap-2.5 p-2.5 bg-dark-base rounded-lg border border-dark-border cursor-pointer hover:border-brand-green transition">
+                    <input type="checkbox" class="mt-0.5 rounded border-dark-border text-brand-green focus:ring-0">
+                    <span>5. Không có lỗi trùng lặp thẻ Title và Meta Description giữa các URL.</span>
+                </label>
+                <label class="flex items-start gap-2.5 p-2.5 bg-dark-base rounded-lg border border-dark-border cursor-pointer hover:border-brand-green transition">
+                    <input type="checkbox" class="mt-0.5 rounded border-dark-border text-brand-green focus:ring-0">
+                    <span>6. Tất cả hình ảnh bài viết đều có thẻ <code>alt</code> chứa từ khóa liên quan.</span>
+                </label>
+            </div>
+
+            <div class="flex justify-end pt-2">
+                <button onclick="closeModal('checklistModal')" class="px-5 py-2 bg-brand-green text-black font-extrabold text-xs rounded-xl shadow transition">
+                    Hoàn Thành Kiểm Tra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Interactive Snippet Preview Logic
+        function updateSnippet() {
+            const title = document.getElementById('simTitle').value;
+            const desc = document.getElementById('simDesc').value;
+
+            const titleCount = title.length;
+            const descCount = desc.length;
+
+            document.getElementById('titleCount').innerText = `${titleCount} / 60 ký tự`;
+            document.getElementById('descCount').innerText = `${descCount} / 160 ký tự`;
+
+            // Title render
+            if (title.trim() !== '') {
+                document.getElementById('prevTitle').innerText = title;
+            } else {
+                document.getElementById('prevTitle').innerText = 'Tiêu đề bài viết sẽ hiển thị ở đây';
+            }
+
+            // Desc render
+            if (desc.trim() !== '') {
+                document.getElementById('prevDesc').innerText = desc;
+            } else {
+                document.getElementById('prevDesc').innerText = 'Đoạn thẻ mô tả Meta Description sẽ hiển thị đầy đủ tại đây giúp người tìm kiếm hình dung được nội dung bài viết...';
+            }
+
+            // Warning indicators
+            const statusEl = document.getElementById('snippetStatus');
+            if (titleCount > 60) {
+                statusEl.innerText = '⚠️ Thẻ Title quá dài (vượt 60 ký tự), có nguy cơ bị Google cắt ngắn (...)';
+                statusEl.className = 'text-[11px] text-brand-red pt-1 font-bold';
+            } else if (descCount > 160) {
+                statusEl.innerText = '⚠️ Thẻ Meta Description quá dài (vượt 160 ký tự).';
+                statusEl.className = 'text-[11px] text-brand-red pt-1 font-bold';
+            } else if (titleCount >= 40 && descCount >= 120) {
+                statusEl.innerText = '✅ Độ dài thẻ Title & Meta Description cực kỳ tối ưu!';
+                statusEl.className = 'text-[11px] text-brand-green pt-1 font-bold';
+            } else {
+                statusEl.innerText = '💡 Mẹo: Đưa từ khóa chính lên ngay đầu thẻ Title để đạt điểm On-Page cao nhất.';
+                statusEl.className = 'text-[11px] text-brand-gold pt-1';
+            }
+        }
+
+        // Category Filter Logic
+        function filterCategory(category) {
+            // Update active state of buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-blue', 'text-white', 'shadow');
+                btn.classList.add('bg-dark-card', 'text-gray-300');
+            });
+            event.currentTarget.classList.remove('bg-dark-card', 'text-gray-300');
+            event.currentTarget.classList.add('bg-brand-blue', 'text-white', 'shadow');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.task-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Modal triggers
+        function openAssignmentDetails(title, body) {
+            document.getElementById('modalAssignTitle').innerText = title;
+            document.getElementById('modalAssignBody').innerText = body;
+            document.getElementById('assignmentModal').classList.remove('hidden');
+        }
+
+        function openChecklistModal() {
+            document.getElementById('checklistModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
