@@ -145,7 +145,7 @@
             </div>
         </div>
         
-        <!-- Mobile Search Bar (Visible only on mobile) -->
+        <!-- Mobile Search Bar -->
         <div class="px-4 pb-3 md:hidden flex items-center gap-2">
             <div class="relative flex-1">
                 <input type="text" oninput="filterGames()" placeholder="Nhập tên game..." 
@@ -174,38 +174,23 @@
                     <button onclick="selectCategory('moi')" class="cat-btn bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
                         <i class="fa-solid fa-bolt text-yellow-200"></i> Game Mới
                     </button>
+                    <button onclick="selectCategory('2-nguoi')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        👥 2 người
+                    </button>
+                    <button onclick="selectCategory('phieu-luu')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        🗺️ Phiêu lưu
+                    </button>
+                    <button onclick="selectCategory('hanh-dong')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
+                        🥊 Hành động
+                    </button>
                     <button onclick="selectCategory('giai-tri')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
                         👾 Giải trí
-                    </button>
-                    <button onclick="selectCategory('van-phong')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        📁 Văn phòng
                     </button>
                     <button onclick="selectCategory('tri-tue')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
                         🧠 Trí tuệ
                     </button>
                     <button onclick="selectCategory('tre-em')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
                         👶 Trẻ em
-                    </button>
-                    <button onclick="selectCategory('y8')" class="cat-btn bg-red-800 hover:bg-red-700 text-white px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0 font-extrabold">
-                        Y8 Game
-                    </button>
-                    <button onclick="selectCategory('hanh-dong')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        🥊 Hành động
-                    </button>
-                    <button onclick="selectCategory('phieu-luu')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        🗺️ Phiêu lưu
-                    </button>
-                    <button onclick="selectCategory('2-nguoi')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        👥 2 người
-                    </button>
-                    <button onclick="selectCategory('kinh-dien')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        👑 Kinh điển
-                    </button>
-                    <button onclick="selectCategory('chien-thuat')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-gray-200 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        ⚔️ Chiến thuật
-                    </button>
-                    <button onclick="selectCategory('pikachu')" class="cat-btn bg-dark-card border border-dark-border hover:border-brand-orange text-yellow-400 px-3 py-2 rounded-xl flex items-center gap-1.5 shrink-0">
-                        ⚡ Pikachu
                     </button>
                 </div>
             </div>
@@ -237,12 +222,10 @@
 
             </div>
 
-            <!-- RIGHT SIDEBAR: RANKING / LEADERBOARD -->
+            <!-- RIGHT SIDEBAR: LEADERBOARD -->
             <div class="lg:col-span-1 space-y-6">
                 
-                <!-- LEADERBOARD CARD -->
                 <div class="glass-panel rounded-2xl p-4 border border-dark-border sticky top-20">
-                    
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="font-extrabold text-base text-white flex items-center gap-2">
                             <i class="fa-solid fa-trophy text-brand-yellow text-lg"></i>
@@ -259,14 +242,6 @@
                         </button>
                     </div>
 
-                    <div class="flex justify-end gap-2 text-[11px] text-gray-400 mb-3 font-medium">
-                        <span class="cursor-pointer text-brand-orange font-bold">Tuần</span>
-                        <span>•</span>
-                        <span class="cursor-pointer hover:text-white">Tháng</span>
-                        <span>•</span>
-                        <span class="cursor-pointer hover:text-white">Mọi thời đại</span>
-                    </div>
-
                     <div id="leaderboardList" class="space-y-2.5">
                         <!-- Rendered via JS -->
                     </div>
@@ -277,7 +252,6 @@
                             Tham Gia Ngay
                         </button>
                     </div>
-
                 </div>
 
             </div>
@@ -304,10 +278,9 @@
                 <div>
                     <h3 class="font-bold text-sm text-white mb-3 uppercase tracking-wider">Thể loại Hot</h3>
                     <ul class="text-xs text-gray-400 space-y-2">
-                        <li><a href="#" class="hover:text-brand-orange transition">Game Người Thời Tiền Sử</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Chú Bé Lửa & Cô Bé Nước</a></li>
                         <li><a href="#" class="hover:text-brand-orange transition">Game Thời Trang Công Chúa</a></li>
                         <li><a href="#" class="hover:text-brand-orange transition">Game Pop It Fidget 3D</a></li>
-                        <li><a href="#" class="hover:text-brand-orange transition">Game Bắn Súng Y8</a></li>
                     </ul>
                 </div>
                 <div>
@@ -315,16 +288,15 @@
                     <ul class="text-xs text-gray-400 space-y-2">
                         <li><a href="https://khanhhacode.github.io/SEO/" class="hover:text-brand-orange transition">Về Trang Chủ SEO Classroom</a></li>
                         <li><a href="#" class="hover:text-brand-orange transition">Hướng Dẫn Chơi Game</a></li>
-                        <li><a href="#" class="hover:text-brand-orange transition">Chính Sách Bảo Mật</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-sm text-white mb-3 uppercase tracking-wider">Kết Nối</h3>
                     <div class="flex gap-3 text-lg">
-                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-brand-orange hover:border-brand-orange transition">
+                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-brand-orange transition">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-red-500 hover:border-red-500 transition">
+                        <a href="#" class="w-9 h-9 rounded-full bg-dark-base border border-dark-border flex items-center justify-center text-gray-300 hover:text-red-500 transition">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </div>
@@ -336,16 +308,17 @@
         </div>
     </footer>
 
-    <!-- MODAL CHƠI GAME / GAME PLAYER SIMULATOR -->
+    <!-- MODAL CHƠI GAME / GAME PLAYER -->
     <div id="gameModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">
         <div class="bg-dark-card border border-dark-border w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[95vh]">
             
+            <!-- Modal Header -->
             <div class="p-3.5 bg-dark-base border-b border-dark-border flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <img id="modalGameIcon" src="" class="w-9 h-9 rounded-lg object-cover border border-dark-border" alt="Icon">
                     <div>
                         <h3 id="modalGameTitle" class="font-bold text-white text-base leading-tight">Tên Game</h3>
-                        <p id="modalGameCategory" class="text-xs text-brand-orange">Hành động • 12+</p>
+                        <p id="modalGameCategory" class="text-xs text-brand-orange">Thể loại • Rated ALL</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-2">
@@ -358,33 +331,16 @@
                 </div>
             </div>
 
-            <div class="relative bg-black flex-1 min-h-[350px] sm:min-h-[480px] flex items-center justify-center overflow-hidden" id="gameScreenContainer">
-                <div id="gameCanvas" class="w-full h-full flex flex-col items-center justify-center bg-slate-950 p-6 text-center relative select-none">
-                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                    
-                    <div id="gameSimState" class="relative z-10 max-w-md">
-                        <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-brand-orange to-brand-yellow flex items-center justify-center text-white text-4xl shadow-xl animate-bounce">
-                            <i id="gameIconLarge" class="fa-solid fa-gamepad"></i>
-                        </div>
-                        <h2 id="simGameName" class="text-2xl font-extrabold text-white mb-2">Đang tải game...</h2>
-                        <p class="text-xs text-gray-400 mb-6">Sử dụng bàn phím hoặc chuột để điều khiển trong trò chơi</p>
-                        
-                        <div class="bg-dark-card/90 p-4 rounded-xl border border-dark-border mb-4">
-                            <p class="text-xs font-bold text-brand-yellow mb-1">MÔ PHỎNG LỐI CHƠI</p>
-                            <p class="text-sm text-gray-200 font-mono mb-3">Điểm hiện tại: <span id="simScore" class="text-brand-orange text-lg font-bold">0</span></p>
-                            <button onclick="addSimScore()" class="w-full py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-sm rounded-lg shadow-lg active:scale-95 transition">
-                                🎮 BẤM ĐỂ CHƠI & LÊN ĐIỂM
-                            </button>
-                        </div>
-                        <p class="text-[11px] text-gray-500">Bấm phím [ESC] để thoát chế độ toàn màn hình</p>
-                    </div>
-                </div>
+            <!-- Game View Container (Dynamic Iframe / Simulator) -->
+            <div class="relative bg-black flex-1 min-h-[380px] sm:min-h-[520px] flex items-center justify-center overflow-hidden" id="gameScreenContainer">
+                <!-- Nội dung được nạp động bằng JavaScript -->
             </div>
 
+            <!-- Modal Footer Controls -->
             <div class="p-3 bg-dark-base border-t border-dark-border flex flex-wrap items-center justify-between gap-3 text-xs">
                 <div class="flex items-center gap-4">
                     <button onclick="likeGame()" class="flex items-center gap-1.5 text-gray-300 hover:text-brand-pink transition font-semibold">
-                        <i class="fa-solid fa-heart text-brand-pink"></i> <span id="likeCount">1,240</span> Thích
+                        <i class="fa-solid fa-heart text-brand-pink"></i> <span id="likeCount">2,540</span> Thích
                     </button>
                     <button onclick="shareGame()" class="flex items-center gap-1.5 text-gray-300 hover:text-brand-blue transition font-semibold">
                         <i class="fa-solid fa-share-nodes"></i> Chia sẻ
@@ -393,7 +349,7 @@
                 <div class="flex items-center gap-2">
                     <span class="text-gray-400">Đánh giá:</span>
                     <div class="text-brand-yellow text-sm">
-                        ★★★★★ <span class="text-gray-300 font-bold ml-1">4.9/5</span>
+                        ★★★★★ <span class="text-gray-300 font-bold ml-1">5.0/5</span>
                     </div>
                 </div>
             </div>
@@ -427,16 +383,26 @@
                     ĐĂNG NHẬP
                 </button>
             </form>
-            <div class="mt-4 text-center text-xs text-gray-400">
-                Chưa có tài khoản? <a href="#" class="text-brand-orange font-bold hover:underline">Đăng ký ngay</a>
-            </div>
         </div>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
         const gamesData = [
-            { id: 1, title: "Người Thời Tiền Sử", category: "phieu-luu", type: "featured", badge: "HAY", age: "12+", views: "254.3K", rating: "4.9", img: "https://images.unsplash.com/photo-1563089145-599997674d42?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-skull" },
+            { 
+                id: 1, 
+                title: "Chú Bé Lửa & Cô Bé Nước (Fireboy & Watergirl)", 
+                category: "2-nguoi", 
+                type: "featured", 
+                badge: "HOT PLAY", 
+                age: "ALL", 
+                views: "520.4K", 
+                rating: "5.0", 
+                img: "https://images.unsplash.com/photo-1563089145-599997674d42?w=500&auto=format&fit=crop&q=80", 
+                icon: "fa-solid fa-fire-flame-curved",
+                // Tự động sử dụng đường dẫn file local nếu có, hoặc dùng bản nhúng HTML5 dự phòng mượt mà
+                embedUrl: "./games/fireboy/index.html"
+            },
             { id: 2, title: "Thời Trang Dạ Hội Công Chúa", category: "con-gai", type: "medium", badge: "HOT", age: "", views: "182.1K", rating: "4.8", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-wand-magic-sparkles" },
             { id: 3, title: "Pop It Fidget 3D", category: "giai-tri", type: "small", badge: "", age: "12+", views: "95K", rating: "4.7", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-shapes" },
             { id: 4, title: "Bắn Súng Săn Tiền Thưởng", category: "hanh-dong", type: "small", badge: "", age: "12+", views: "310K", rating: "4.9", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-crosshair" },
@@ -447,27 +413,20 @@
             { id: 9, title: "Tiệm Bánh Ngọt Candy", category: "tre-em", type: "small", badge: "", age: "", views: "115K", rating: "4.7", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-cookie" },
             { id: 10, title: "Bé Học Vẽ Tranh", category: "tre-em", type: "small", badge: "", age: "", views: "52K", rating: "4.3", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-palette" },
             { id: 11, title: "Panda Quyền Thuật", category: "hanh-dong", type: "small", badge: "HAY", age: "12+", views: "420K", rating: "5.0", img: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef9?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-paw" },
-            { id: 12, title: "Robot Chiến Đấu 3D", category: "chien-thuat", type: "small", badge: "", age: "12+", views: "290K", rating: "4.8", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-robot" },
-            { id: 13, title: "Xếp Gạch Đỉnh Cao", category: "tri-tue", type: "small", badge: "", age: "", views: "198K", rating: "4.6", img: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-cubes" },
-            { id: 14, title: "Chú Bố Cứu Hỏa", category: "giai-tri", type: "small", badge: "", age: "", views: "73K", rating: "4.2", img: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-fire-extinguisher" },
-            { id: 15, title: "Thám Tử Săn Quái", category: "phieu-luu", type: "small", badge: "", age: "18+", views: "340K", rating: "4.9", img: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-mask" },
-            { id: 16, title: "Chú Chó Scooby Chạy Trốn", category: "giai-tri", type: "small", badge: "", age: "", views: "160K", rating: "4.7", img: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-dog" }
+            { id: 12, title: "Robot Chiến Đấu 3D", category: "chien-thuat", type: "small", badge: "", age: "12+", views: "290K", rating: "4.8", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&auto=format&fit=crop&q=80", icon: "fa-solid fa-robot" }
         ];
 
         const topGamesList = [
-            { rank: 1, title: "Panda Quyền Thuật", plays: "420.5K", icon: "fa-solid fa-paw", score: "99,850" },
-            { rank: 2, title: "Thám Tử Săn Quái", plays: "340.1K", icon: "fa-solid fa-mask", score: "88,200" },
+            { rank: 1, title: "Fireboy & Watergirl", plays: "520.4K", icon: "fa-solid fa-fire-flame-curved", score: "120,500" },
+            { rank: 2, title: "Panda Quyền Thuật", plays: "420.5K", icon: "fa-solid fa-paw", score: "99,850" },
             { rank: 3, title: "Bắn Súng Săn Tiền", plays: "310.8K", icon: "fa-solid fa-crosshair", score: "79,400" },
-            { rank: 4, title: "Robot Chiến Đấu 3D", plays: "290.0K", icon: "fa-solid fa-robot", score: "65,100" },
-            { rank: 5, title: "Người Thời Tiền Sử", plays: "254.3K", icon: "fa-solid fa-skull", score: "54,300" }
+            { rank: 4, title: "Robot Chiến Đấu 3D", plays: "290.0K", icon: "fa-solid fa-robot", score: "65,100" }
         ];
 
         const topPlayersList = [
             { rank: 1, name: "DragonSlayer99", avatar: "🐲", score: "1,250,900 điểm", title: "Thần Thoại" },
             { rank: 2, name: "ProGamer_VN", avatar: "⚡", score: "980,450 điểm", title: "Cao Thủ" },
-            { rank: 3, name: "MinhPikachu", avatar: "🎮", score: "850,200 điểm", title: "Dày Dặn" },
-            { rank: 4, name: "Princess_Gamer", avatar: "👑", score: "720,100 điểm", title: "Tinh Anh" },
-            { rank: 5, name: "NoobMaster69", avatar: "🔥", score: "640,000 điểm", title: "Tân Binh" }
+            { rank: 3, name: "MinhPikachu", avatar: "🎮", score: "850,200 điểm", title: "Dày Dặn" }
         ];
 
         let currentRankTab = 'games';
@@ -615,18 +574,6 @@
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.classList.remove('bg-brand-blue', 'text-white');
             });
-            
-            const titleMap = {
-                'all': '<i class="fa-solid fa-fire-flame-curved text-brand-orange"></i> Game Vui Hay & Nổi Bật',
-                'hot': '🔥 Tất Cả Game Hot',
-                'hay': '⭐ Tất Cả Game Hay Nhất',
-                'moi': '⚡ Game Mới Cập Nhật',
-                'phieu-luu': '🗺️ Game Phiêu Lưu',
-                'hanh-dong': '🥊 Game Hành Động Nhập Vai',
-                'con-gai': '👑 Game Bạn Gái & Thời Trang',
-                '2-nguoi': '👥 Game 2 Người Chơi'
-            };
-            document.getElementById('sectionTitle').innerHTML = titleMap[catKey] || '🎮 Game Khu Vui Chơi';
             renderGames(catKey);
         }
 
@@ -635,28 +582,59 @@
             renderGames('all', query);
         }
 
+        // HÀM MỞ GAME VÀ TẢI IFRAME GAME THỰC TẾ
         function openGameModal(game) {
             document.getElementById('modalGameTitle').innerText = game.title;
             document.getElementById('modalGameCategory').innerText = `Thể loại: ${game.category.toUpperCase()} • Rated ${game.age || 'All'}`;
             document.getElementById('modalGameIcon').src = game.img;
-            document.getElementById('simGameName').innerText = game.title;
             
-            const iconElem = document.getElementById('gameIconLarge');
-            iconElem.className = game.icon || 'fa-solid fa-gamepad';
+            const container = document.getElementById('gameScreenContainer');
 
-            currentSimScore = 0;
-            document.getElementById('simScore').innerText = '0';
+            // Nếu game có đường dẫn nhúng iframe thực tế
+            if (game.embedUrl) {
+                container.innerHTML = `
+                    <iframe src="${game.embedUrl}" 
+                            class="w-full h-full border-0 min-h-[380px] sm:min-h-[520px]" 
+                            allowfullscreen 
+                            allow="autoplay; payment; fullscreen; microphone; clipboard-read; clipboard-write"
+                            onerror="handleIframeError(this)">
+                    </iframe>
+                `;
+            } else {
+                // Màn hình mô phỏng cho các game chưa có source
+                container.innerHTML = `
+                    <div id="gameCanvas" class="w-full h-full flex flex-col items-center justify-center bg-slate-950 p-6 text-center relative select-none">
+                        <div class="relative z-10 max-w-md">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-brand-orange to-brand-yellow flex items-center justify-center text-white text-4xl shadow-xl animate-bounce">
+                                <i class="${game.icon || 'fa-solid fa-gamepad'}"></i>
+                            </div>
+                            <h2 class="text-2xl font-extrabold text-white mb-2">${game.title}</h2>
+                            <p class="text-xs text-gray-400 mb-6">Sử dụng bàn phím hoặc chuột để điều khiển trong trò chơi</p>
+                            <div class="bg-dark-card/90 p-4 rounded-xl border border-dark-border mb-4">
+                                <p class="text-xs font-bold text-brand-yellow mb-1">MÔ PHỎNG LỐI CHƠI</p>
+                                <p class="text-sm text-gray-200 font-mono mb-3">Điểm hiện tại: <span id="simScore" class="text-brand-orange text-lg font-bold">0</span></p>
+                                <button onclick="addSimScore()" class="w-full py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-sm rounded-lg shadow-lg active:scale-95 transition">
+                                    🎮 BẤM ĐỂ CHƠI & LÊN ĐIỂM
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
 
             document.getElementById('gameModal').classList.remove('hidden');
         }
 
         function closeGameModal() {
             document.getElementById('gameModal').classList.add('hidden');
+            // Dừng nhạc/tiếng game khi đóng modal bằng cách xoá iframe
+            document.getElementById('gameScreenContainer').innerHTML = '';
         }
 
         function addSimScore() {
             currentSimScore += 10;
-            document.getElementById('simScore').innerText = currentSimScore;
+            const elem = document.getElementById('simScore');
+            if(elem) elem.innerText = currentSimScore;
         }
 
         function toggleFullscreen() {
