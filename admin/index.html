@@ -5,31 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Khanh Ha Research Hub</title>
 
-  <!-- Khai báo file config.yml -->
-  <link href="/ResearchHub/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+  <!-- Đọc file config.yml -->
+  <link href="config.yml" type="text/yaml" rel="cms-config-url" />
 
-  <!-- Thư viện Netlify Identity -->
+  <!-- Thư viện Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <!-- Thư viện Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <!-- Khai báo URL API Endpoint chính xác từ Netlify -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init({
-        APIUrl: "https://khanhha-research.netlify.app/.netlify/identity"
-      });
-
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.reload();
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
