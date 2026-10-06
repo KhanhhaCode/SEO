@@ -4,14 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Khanh Ha Research Hub</title>
-  
-  <!-- Đường dẫn tuyệt đối đến file config.yml -->
+
+  <!-- Khai báo file cấu hình config.yml -->
   <link href="/ResearchHub/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-  
-  <!-- Widget xác thực Netlify Identity -->
+
+  <!-- Thư viện Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <!-- Thư viện Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- Cấu hình trỏ trực tiếp API về Netlify site -->
+  <script>
+    if (window.netlifyIdentity) {
+      // Kết nối widget với URL dự án Netlify của anh
+      window.netlifyIdentity.init({
+        APIUrl: "https://boisterous-caramel-3c84a6.netlify.app/.netlify/identity"
+      });
+
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.reload();
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
