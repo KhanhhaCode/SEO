@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Khanh Ha Research Hub</title>
 
-  <!-- Khai báo file cấu hình config.yml -->
+  <!-- Khai báo file config.yml -->
   <link href="/ResearchHub/admin/config.yml" type="text/yaml" rel="cms-config-url" />
 
   <!-- Thư viện Netlify Identity -->
@@ -15,14 +15,9 @@
   <!-- Thư viện Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- Cấu hình trỏ trực tiếp API về Netlify site -->
+  <!-- Script liên kết trực tiếp với dự án Netlify -->
   <script>
     if (window.netlifyIdentity) {
-      // Kết nối widget với URL dự án Netlify của anh
-      window.netlifyIdentity.init({
-        APIUrl: "https://khanhha-research.netlify.app/.netlify/identity"
-      });
-
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
