@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho Dữ Liệu & Tài Nguyên Nghiên Cứu | Khanh Ha Research Hub</title>
+    <meta name="description" content="Kho tải xuống các tập dữ liệu mẫu CSV, file dự án VOSviewer và template phản biện tạp chí Scopus.">
+    <meta name="google-site-verification" content="A_8vESnV7a1L0OzH9Hfm9txtKwms-etrwErXA5_ZB-E" />
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5CWE06GT3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R5CWE06GT3');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { background-color: #EFEFEF; color: #1E293B; font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="../index.html" class="text-slate-800 font-extrabold flex items-center gap-2 hover:text-sky-600 transition text-sm">
+                <i class="fa-solid fa-arrow-left text-sky-600"></i> Trang Chủ
+            </a>
+            <span class="text-xs font-bold text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-200">
+                Kho Tài Nguyên Miễn Phí
+            </span>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-6 flex-grow w-full">
+        <div class="border-b border-slate-200 pb-4">
+            <h1 class="text-2xl font-black text-slate-800">KHO DỮ LIỆU & TEMPLATE NGHIÊN CỨU</h1>
+            <p class="text-xs text-slate-500 mt-1">Tổng hợp các tập dữ liệu thực hành, file cấu hình VOSviewer và mẫu giải trình phản biện.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Resource Item 1 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div class="space-y-1">
+                    <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-700 text-[10px] font-extrabold">CSV Dataset</span>
+                    <h3 class="font-bold text-sm text-slate-800">Dataset Doanh Nghiệp ESG & Digital Mindset</h3>
+                    <p class="text-xs text-slate-400">Dùng thực hành trên SmartPLS 4 / SPSS</p>
+                </div>
+                <a href="dataset-esg-sample.csv" download class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold transition shadow-sm shrink-0">
+                    <i class="fa-solid fa-download"></i> Tải về
+                </a>
+            </div>
+
+            <!-- Resource Item 2 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between opacity-75">
+                <div class="space-y-1">
+                    <span class="px-2 py-0.5 rounded bg-purple-100 text-purple-700 text-[10px] font-extrabold">Word Template</span>
+                    <h3 class="font-bold text-sm text-slate-800">Template Response Letter Chuẩn Scopus</h3>
+                    <p class="text-xs text-slate-400">Mẫu thư giải trình phản biện tạp chí Q1/Q2</p>
+                </div>
+                <button onclick="alert('File đang được cập nhật thêm nội dung mới!')" class="px-4 py-2 bg-slate-100 text-slate-500 rounded-xl text-xs font-bold shrink-0">
+                    <i class="fa-solid fa-clock"></i> Sắp có
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+        © 2026 Khanh Ha Research Hub.
+    </footer>
+</body>
+</html>

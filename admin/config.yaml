@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: khanhha-research/SEO # Thay bằng [username]/[repo_name] của bạn
+  branch: main
+
+media_folder: "assets/images" # Thư mục lưu ảnh khi tải lên
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "Bài viết Phương pháp"
+    folder: "phuong-phap"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tiêu đề bài viết", name: "title", widget: "string"}
+      - {label: "Chuyên mục (Tag)", name: "tag", widget: "select", options: ["pls-sem", "bibliometrics", "esg", "scopus"]}
+      - {label: "Tóm tắt ngắn", name: "description", widget: "text"}
+      - {label: "Nội dung bài viết", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Cấu hình Website"
+    files:
+      - label: "Thông tin Tác giả"
+        name: "author"
+        file: "data/author.json"
+        fields:
+          - {label: "Tên hiển thị", name: "name", widget: "string"}
+          - {label: "Học vị / Chức danh", name: "title", widget: "string"}
+          - {label: "Mã ORCID", name: "orcid", widget: "string"}

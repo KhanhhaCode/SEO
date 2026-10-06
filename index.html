@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khanh Ha Research Hub | Diễn Đàn & Phương Pháp Nghiên Cứu Khoa Học</title>
+    <meta name="description" content="Chuyên trang chia sẻ phương pháp nghiên cứu định lượng PLS-SEM, Trắc lượng thư mục, ESG và công bố quốc tế.">
+    <meta name="google-site-verification" content="A_8vESnV7a1L0OzH9Hfm9txtKwms-etrwErXA5_ZB-E" />
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5CWE06GT3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R5CWE06GT3');
+    </script>
+
+    <!-- Tailwind CSS & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        siteBg: '#EFEFEF',
+                        colorAmber: '#D97706',
+                        colorRose: '#E11D48',
+                        colorPurple: '#9333EA',
+                        colorTeal: '#0D9488',
+                        colorSky: '#0284C7',
+                        colorEmerald: '#059669',
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #EFEFEF; color: #1E293B; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .pin-card { background: #FFFFFF; border-radius: 0.85rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); transition: all 0.25s ease; }
+        .pin-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- HEADER SÁNG PHONG CÁCH PINTEREST -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-colorRose flex items-center justify-center text-white text-base font-black shadow-md shadow-rose-200">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="font-black text-xl text-slate-800 tracking-tight">Research<span class="text-colorRose">Hub</span></span>
+            </a>
+
+            <!-- Thanh tìm kiếm thông minh -->
+            <div class="flex-1 max-w-xl mx-4">
+                <div class="relative">
+                    <input type="text" id="searchInput" onkeyup="filterPosts()" placeholder="Tìm kiếm SmartPLS, VOSviewer, ESG, Scopus..." class="w-full bg-slate-100 text-xs font-medium text-slate-700 pl-10 pr-4 py-2.5 rounded-full border border-slate-200 outline-none focus:bg-white focus:border-colorRose transition">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Profile Button -->
+            <a href="about.html" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full text-xs font-bold text-slate-700 transition shrink-0">
+                <div class="w-6 h-6 rounded-full bg-colorSky text-white flex items-center justify-center text-[10px] font-bold">KH</div>
+                <span class="hidden sm:inline">Khanh Ha</span>
+            </a>
+        </div>
+
+        <!-- TAGS BAR RỰC RỠ -->
+        <div class="bg-slate-900 px-4 py-2 overflow-x-auto whitespace-nowrap scrollbar-none">
+            <div class="max-w-7xl mx-auto flex items-center gap-2 text-xs font-bold text-white">
+                <span onclick="filterTag('pls-sem')" class="px-3 py-1.5 rounded-md bg-colorAmber text-white hover:opacity-90 cursor-pointer">
+                    <i class="fa-solid fa-chart-diagram"></i> SmartPLS 4
+                </span>
+                <span onclick="filterTag('bibliometrics')" class="px-3 py-1.5 rounded-md bg-colorRose text-white hover:opacity-90 cursor-pointer">
+                    <i class="fa-solid fa-network-wired"></i> Bibliometrics
+                </span>
+                <span onclick="filterTag('esg')" class="px-3 py-1.5 rounded-md bg-colorPurple text-white hover:opacity-90 cursor-pointer">
+                    <i class="fa-solid fa-leaf"></i> Dữ Liệu ESG
+                </span>
+                <span onclick="filterTag('scopus')" class="px-3 py-1.5 rounded-md bg-colorTeal text-white hover:opacity-90 cursor-pointer">
+                    <i class="fa-solid fa-newspaper"></i> Scopus/WoS
+                </span>
+                <a href="tai-nguyen/index.html" class="px-3 py-1.5 rounded-md bg-colorSky text-white hover:opacity-90 cursor-pointer">
+                    <i class="fa-solid fa-database"></i> Kho Dataset
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (PIN GRID CARDS) -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <!-- THÀNH PHẦN LƯỚI CARD ĐA DẠNG MÀU SẮC -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="postsContainer">
+
+            <!-- Card 1 (PLS-SEM) -->
+            <div class="pin-card post-item overflow-hidden flex flex-col justify-between" data-tag="pls-sem" data-keywords="smartpls 4 pls-sem outer model inner model bootstrapping">
+                <div>
+                    <div class="bg-colorAmber p-6 text-white text-center space-y-2">
+                        <i class="fa-solid fa-chart-line text-4xl"></i>
+                        <h3 class="font-black text-lg uppercase tracking-wider">PLS-SEM Guide</h3>
+                    </div>
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-bold text-colorAmber uppercase tracking-widest">Phương pháp định lượng</span>
+                        <h4 class="font-extrabold text-sm text-slate-800 leading-snug">
+                            Quy trình 2 bước kiểm định mô hình cấu trúc bằng SmartPLS 4
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                            Hướng dẫn đánh giá Outer Model (Cronbach's Alpha, AVE, HTMT) và Inner Model (Bootstrapping, R2, f2, Q2).
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <a href="phuong-phap/smartpls-4-co-ban.html" class="block w-full py-2 bg-slate-100 hover:bg-colorAmber hover:text-white text-center rounded-lg text-xs font-bold text-slate-700 transition">
+                        Xem chi tiết
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 (Bibliometrics) -->
+            <div class="pin-card post-item overflow-hidden flex flex-col justify-between" data-tag="bibliometrics" data-keywords="vosviewer bibliometrics scopus wos co-citation">
+                <div>
+                    <div class="bg-colorRose p-6 text-white text-center space-y-2">
+                        <i class="fa-solid fa-circle-nodes text-4xl"></i>
+                        <h3 class="font-black text-lg uppercase tracking-wider">VOSviewer</h3>
+                    </div>
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-bold text-colorRose uppercase tracking-widest">Trắc lượng thư mục</span>
+                        <h4 class="font-extrabold text-sm text-slate-800 leading-snug">
+                            Vẽ bản đồ tri thức tổng quan tài liệu từ dữ liệu Scopus
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                            Trích xuất dữ liệu chuẩn Scopus, phân tích Co-citation và trực quan hóa mạng lưới nghiên cứu bằng VOSviewer.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <a href="tai-nguyen/index.html" class="block w-full py-2 bg-slate-100 hover:bg-colorRose hover:text-white text-center rounded-lg text-xs font-bold text-slate-700 transition">
+                        Xem chi tiết
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 (ESG Data) -->
+            <div class="pin-card post-item overflow-hidden flex flex-col justify-between" data-tag="esg" data-keywords="esg dữ liệu doanh nghiệp gri standards content analysis">
+                <div>
+                    <div class="bg-colorTeal p-6 text-white text-center space-y-2">
+                        <i class="fa-solid fa-leaf text-4xl"></i>
+                        <h3 class="font-black text-lg uppercase tracking-wider">ESG Data</h3>
+                    </div>
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-bold text-colorTeal uppercase tracking-widest">Dữ liệu doanh nghiệp</span>
+                        <h4 class="font-extrabold text-sm text-slate-800 leading-snug">
+                            Mã hóa chỉ số ESG từ Báo cáo Thường niên doanh nghiệp niêm yết
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                            Kỹ thuật Content Analysis kết hợp bộ tiêu chuẩn GRI Standards để chấm điểm thực hành ESG.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <a href="tai-nguyen/index.html" class="block w-full py-2 bg-slate-100 hover:bg-colorTeal hover:text-white text-center rounded-lg text-xs font-bold text-slate-700 transition">
+                        Xem chi tiết
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4 (Reviewer Response) -->
+            <div class="pin-card post-item overflow-hidden flex flex-col justify-between" data-tag="scopus" data-keywords="reviewer response scopus q1 q2 công bố quốc tế">
+                <div>
+                    <div class="bg-colorPurple p-6 text-white text-center space-y-2">
+                        <i class="fa-solid fa-file-signature text-4xl"></i>
+                        <h3 class="font-black text-lg uppercase tracking-wider">Reviewer Response</h3>
+                    </div>
+                    <div class="p-4 space-y-2">
+                        <span class="text-[10px] font-bold text-colorPurple uppercase tracking-widest">Kinh nghiệm Scopus</span>
+                        <h4 class="font-extrabold text-sm text-slate-800 leading-snug">
+                            Chiến lược viết Response Letter giải trình phản biện tạp chí Q1/Q2
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                            Mẫu thư giải trình Response Letter chuẩn quốc tế và phương pháp phản biện logic các góp ý khó.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4 pt-0">
+                    <a href="tai-nguyen/index.html" class="block w-full py-2 bg-slate-100 hover:bg-colorPurple hover:text-white text-center rounded-lg text-xs font-bold text-slate-700 transition">
+                        Xem chi tiết
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER SÁNG TỐI GIẢN -->
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+        © 2026 Khanh Ha Research Hub • Giao diện Pinterest Grid Style.
+    </footer>
+
+    <script>
+        function filterPosts() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            document.querySelectorAll('.post-item').forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query) || keywords.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterTag(tag) {
+            document.querySelectorAll('.post-item').forEach(card => {
+                if (tag === 'all' || card.getAttribute('data-tag') === tag) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
