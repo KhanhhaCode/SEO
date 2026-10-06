@@ -15,9 +15,13 @@
   <!-- Thư viện Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- Script liên kết trực tiếp với dự án Netlify -->
+  <!-- Khai báo URL API Endpoint chính xác từ Netlify -->
   <script>
     if (window.netlifyIdentity) {
+      window.netlifyIdentity.init({
+        APIUrl: "https://khanhha-research.netlify.app/.netlify/identity"
+      });
+
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
