@@ -1,13 +1,14 @@
 backend:
-  name: github
-  repo: khanhha-research/SEO # Thay bằng [username]/[repo_name] của bạn
-  branch: main
+  name: git-gateway
+  branch: main # Nhánh chính chứa code trên GitHub
 
-media_folder: "assets/images" # Thư mục lưu ảnh khi tải lên
-public_folder: "/assets/images"
+# Cấu hình đường dẫn thư mục ảnh chính xác cho repo ResearchHub
+media_folder: "assets/images"
+public_folder: "/ResearchHub/assets/images"
 
 collections:
-  - name: "posts"
+  # Quản lý các Bài viết Phương pháp
+  - name: "phuong-phap"
     label: "Bài viết Phương pháp"
     folder: "phuong-phap"
     create: true
@@ -18,6 +19,7 @@ collections:
       - {label: "Tóm tắt ngắn", name: "description", widget: "text"}
       - {label: "Nội dung bài viết", name: "body", widget: "markdown"}
 
+  # Quản lý Thông tin Tác giả / Cấu hình
   - name: "settings"
     label: "Cấu hình Website"
     files:
